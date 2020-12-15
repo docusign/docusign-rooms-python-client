@@ -35,7 +35,7 @@ class UserToInvite(object):
         'last_name': 'str',
         'email': 'str',
         'role_id': 'int',
-        'access_level': 'str',
+        'access_level': 'AccessLevel',
         'default_office_id': 'int',
         'regions': 'list[int]',
         'offices': 'list[int]',
@@ -183,7 +183,7 @@ class UserToInvite(object):
 
 
         :return: The access_level of this UserToInvite.  # noqa: E501
-        :rtype: str
+        :rtype: AccessLevel
         """
         return self._access_level
 
@@ -193,16 +193,10 @@ class UserToInvite(object):
 
 
         :param access_level: The access_level of this UserToInvite.  # noqa: E501
-        :type: str
+        :type: AccessLevel
         """
         if access_level is None:
             raise ValueError("Invalid value for `access_level`, must not be `None`")  # noqa: E501
-        allowed_values = ["Contributor", "Office", "Region", "Company", "Admin"]  # noqa: E501
-        if access_level not in allowed_values:
-            raise ValueError(
-                "Invalid value for `access_level` ({0}), must be one of {1}"  # noqa: E501
-                .format(access_level, allowed_values)
-            )
 
         self._access_level = access_level
 

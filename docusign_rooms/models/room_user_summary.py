@@ -37,7 +37,9 @@ class RoomUserSummary(object):
         'last_name': 'str',
         'transaction_side_id': 'str',
         'role_id': 'int',
-        'title_id': 'int'
+        'title_id': 'int',
+        'company_name': 'str',
+        'role_name': 'str'
     }
 
     attribute_map = {
@@ -47,10 +49,12 @@ class RoomUserSummary(object):
         'last_name': 'lastName',
         'transaction_side_id': 'transactionSideId',
         'role_id': 'roleId',
-        'title_id': 'titleId'
+        'title_id': 'titleId',
+        'company_name': 'companyName',
+        'role_name': 'roleName'
     }
 
-    def __init__(self, user_id=None, email=None, first_name=None, last_name=None, transaction_side_id=None, role_id=None, title_id=None):  # noqa: E501
+    def __init__(self, user_id=None, email=None, first_name=None, last_name=None, transaction_side_id=None, role_id=None, title_id=None, company_name=None, role_name=None):  # noqa: E501
         """RoomUserSummary - a model defined in Swagger"""  # noqa: E501
 
         self._user_id = None
@@ -60,6 +64,8 @@ class RoomUserSummary(object):
         self._transaction_side_id = None
         self._role_id = None
         self._title_id = None
+        self._company_name = None
+        self._role_name = None
         self.discriminator = None
 
         if user_id is not None:
@@ -76,6 +82,10 @@ class RoomUserSummary(object):
             self.role_id = role_id
         if title_id is not None:
             self.title_id = title_id
+        if company_name is not None:
+            self.company_name = company_name
+        if role_name is not None:
+            self.role_name = role_name
 
     @property
     def user_id(self):
@@ -223,6 +233,48 @@ class RoomUserSummary(object):
         """
 
         self._title_id = title_id
+
+    @property
+    def company_name(self):
+        """Gets the company_name of this RoomUserSummary.  # noqa: E501
+
+
+        :return: The company_name of this RoomUserSummary.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_name
+
+    @company_name.setter
+    def company_name(self, company_name):
+        """Sets the company_name of this RoomUserSummary.
+
+
+        :param company_name: The company_name of this RoomUserSummary.  # noqa: E501
+        :type: str
+        """
+
+        self._company_name = company_name
+
+    @property
+    def role_name(self):
+        """Gets the role_name of this RoomUserSummary.  # noqa: E501
+
+
+        :return: The role_name of this RoomUserSummary.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_name
+
+    @role_name.setter
+    def role_name(self, role_name):
+        """Sets the role_name of this RoomUserSummary.
+
+
+        :param role_name: The role_name of this RoomUserSummary.  # noqa: E501
+        :type: str
+        """
+
+        self._role_name = role_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,6 +35,7 @@ class ClassicAgentToInvite(object):
         'last_name': 'str',
         'email': 'str',
         'office_id': 'int',
+        'company_type_id': 'str',
         'e_sign_permission_profile_id': 'str'
     }
 
@@ -43,16 +44,18 @@ class ClassicAgentToInvite(object):
         'last_name': 'lastName',
         'email': 'email',
         'office_id': 'officeId',
+        'company_type_id': 'companyTypeId',
         'e_sign_permission_profile_id': 'eSignPermissionProfileId'
     }
 
-    def __init__(self, first_name=None, last_name=None, email=None, office_id=None, e_sign_permission_profile_id=None):  # noqa: E501
+    def __init__(self, first_name=None, last_name=None, email=None, office_id=None, company_type_id=None, e_sign_permission_profile_id=None):  # noqa: E501
         """ClassicAgentToInvite - a model defined in Swagger"""  # noqa: E501
 
         self._first_name = None
         self._last_name = None
         self._email = None
         self._office_id = None
+        self._company_type_id = None
         self._e_sign_permission_profile_id = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class ClassicAgentToInvite(object):
         self.last_name = last_name
         self.email = email
         self.office_id = office_id
+        if company_type_id is not None:
+            self.company_type_id = company_type_id
         if e_sign_permission_profile_id is not None:
             self.e_sign_permission_profile_id = e_sign_permission_profile_id
 
@@ -154,6 +159,27 @@ class ClassicAgentToInvite(object):
             raise ValueError("Invalid value for `office_id`, must not be `None`")  # noqa: E501
 
         self._office_id = office_id
+
+    @property
+    def company_type_id(self):
+        """Gets the company_type_id of this ClassicAgentToInvite.  # noqa: E501
+
+
+        :return: The company_type_id of this ClassicAgentToInvite.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_type_id
+
+    @company_type_id.setter
+    def company_type_id(self, company_type_id):
+        """Sets the company_type_id of this ClassicAgentToInvite.
+
+
+        :param company_type_id: The company_type_id of this ClassicAgentToInvite.  # noqa: E501
+        :type: str
+        """
+
+        self._company_type_id = company_type_id
 
     @property
     def e_sign_permission_profile_id(self):

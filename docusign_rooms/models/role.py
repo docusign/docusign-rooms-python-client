@@ -38,7 +38,7 @@ class Role(object):
         'is_external': 'bool',
         'created_date': 'datetime',
         'is_assigned': 'bool',
-        'permissions': 'NullablePermissions'
+        'permissions': 'Permissions'
     }
 
     attribute_map = {
@@ -235,7 +235,7 @@ class Role(object):
 
 
         :return: The permissions of this Role.  # noqa: E501
-        :rtype: NullablePermissions
+        :rtype: Permissions
         """
         return self._permissions
 
@@ -245,7 +245,7 @@ class Role(object):
 
 
         :param permissions: The permissions of this Role.  # noqa: E501
-        :type: NullablePermissions
+        :type: Permissions
         """
 
         self._permissions = permissions

@@ -40,7 +40,7 @@ class RolesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_role(self, role, account_id, **kwargs):
+    def create_role(self, account_id, **kwargs):
         """
         Creates a role.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,24 +49,24 @@ class RolesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_role(role, account_id, callback=callback_function)
+        >>> thread = api.create_role(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param RoleForCreate role:  (required)
         :param str account_id: (required)
+        :param RoleForCreate body:
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_role_with_http_info(role, account_id, **kwargs)
+            return self.create_role_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.create_role_with_http_info(role, account_id, **kwargs)
+            (data) = self.create_role_with_http_info(account_id, **kwargs)
             return data
 
-    def create_role_with_http_info(self, role, account_id, **kwargs):
+    def create_role_with_http_info(self, account_id, **kwargs):
         """
         Creates a role.
         This method makes a synchronous HTTP request by default. To make an
@@ -75,18 +75,18 @@ class RolesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_role_with_http_info(role, account_id, callback=callback_function)
+        >>> thread = api.create_role_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param RoleForCreate role:  (required)
         :param str account_id: (required)
+        :param RoleForCreate body:
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['role', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -101,9 +101,6 @@ class RolesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'role' is set
-        if ('role' not in params) or (params['role'] is None):
-            raise ValueError("Missing the required parameter `role` when calling `create_role`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_role`")
@@ -124,15 +121,15 @@ class RolesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'role' in params:
-            body_params = params['role']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -240,7 +237,7 @@ class RolesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -352,7 +349,7 @@ class RolesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -469,7 +466,7 @@ class RolesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -489,7 +486,7 @@ class RolesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_role(self, role_id, role, account_id, **kwargs):
+    def update_role(self, role_id, account_id, **kwargs):
         """
         Updates the role with the given roleId.
         This method makes a synchronous HTTP request by default. To make an
@@ -498,25 +495,25 @@ class RolesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_role(role_id, role, account_id, callback=callback_function)
+        >>> thread = api.update_role(role_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int role_id:  (required)
-        :param RoleForUpdate role:  (required)
         :param str account_id: (required)
+        :param RoleForUpdate body:
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_role_with_http_info(role_id, role, account_id, **kwargs)
+            return self.update_role_with_http_info(role_id, account_id, **kwargs)
         else:
-            (data) = self.update_role_with_http_info(role_id, role, account_id, **kwargs)
+            (data) = self.update_role_with_http_info(role_id, account_id, **kwargs)
             return data
 
-    def update_role_with_http_info(self, role_id, role, account_id, **kwargs):
+    def update_role_with_http_info(self, role_id, account_id, **kwargs):
         """
         Updates the role with the given roleId.
         This method makes a synchronous HTTP request by default. To make an
@@ -525,19 +522,19 @@ class RolesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_role_with_http_info(role_id, role, account_id, callback=callback_function)
+        >>> thread = api.update_role_with_http_info(role_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int role_id:  (required)
-        :param RoleForUpdate role:  (required)
         :param str account_id: (required)
+        :param RoleForUpdate body:
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['role_id', 'role', 'account_id']
+        all_params = ['role_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -555,9 +552,6 @@ class RolesApi(object):
         # verify the required parameter 'role_id' is set
         if ('role_id' not in params) or (params['role_id'] is None):
             raise ValueError("Missing the required parameter `role_id` when calling `update_role`")
-        # verify the required parameter 'role' is set
-        if ('role' not in params) or (params['role'] is None):
-            raise ValueError("Missing the required parameter `role` when calling `update_role`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `update_role`")
@@ -580,15 +574,15 @@ class RolesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'role' in params:
-            body_params = params['role']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

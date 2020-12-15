@@ -42,7 +42,7 @@ class Room(object):
         'created_by_user_id': 'int',
         'rejected_by_user_id': 'int',
         'closed_status_id': 'str',
-        'field_data': 'NullableFieldData'
+        'field_data': 'FieldData'
     }
 
     attribute_map = {
@@ -339,7 +339,7 @@ class Room(object):
 
 
         :return: The field_data of this Room.  # noqa: E501
-        :rtype: NullableFieldData
+        :rtype: FieldData
         """
         return self._field_data
 
@@ -349,7 +349,7 @@ class Room(object):
 
 
         :param field_data: The field_data of this Room.  # noqa: E501
-        :type: NullableFieldData
+        :type: FieldData
         """
 
         self._field_data = field_data

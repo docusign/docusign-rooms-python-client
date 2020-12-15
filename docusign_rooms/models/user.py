@@ -37,7 +37,7 @@ class User(object):
         'last_name': 'str',
         'is_locked_out': 'bool',
         'status': 'str',
-        'access_level': 'str',
+        'access_level': 'AccessLevel',
         'default_office_id': 'int',
         'title_id': 'int',
         'role_id': 'int',
@@ -244,7 +244,7 @@ class User(object):
 
 
         :return: The access_level of this User.  # noqa: E501
-        :rtype: str
+        :rtype: AccessLevel
         """
         return self._access_level
 
@@ -254,14 +254,8 @@ class User(object):
 
 
         :param access_level: The access_level of this User.  # noqa: E501
-        :type: str
+        :type: AccessLevel
         """
-        allowed_values = ["Contributor", "Office", "Region", "Company", "Admin"]  # noqa: E501
-        if access_level not in allowed_values:
-            raise ValueError(
-                "Invalid value for `access_level` ({0}), must be one of {1}"  # noqa: E501
-                .format(access_level, allowed_values)
-            )
 
         self._access_level = access_level
 

@@ -40,7 +40,7 @@ class DocumentsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_document_user(self, document_id, document_user_for_create, account_id, **kwargs):
+    def create_document_user(self, document_id, account_id, **kwargs):
         """
         Grants access to a document for a user.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,25 +49,25 @@ class DocumentsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_document_user(document_id, document_user_for_create, account_id, callback=callback_function)
+        >>> thread = api.create_document_user(document_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int document_id:  (required)
-        :param DocumentUserForCreate document_user_for_create:  (required)
         :param str account_id: (required)
+        :param DocumentUserForCreate body:
         :return: DocumentUser
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_document_user_with_http_info(document_id, document_user_for_create, account_id, **kwargs)
+            return self.create_document_user_with_http_info(document_id, account_id, **kwargs)
         else:
-            (data) = self.create_document_user_with_http_info(document_id, document_user_for_create, account_id, **kwargs)
+            (data) = self.create_document_user_with_http_info(document_id, account_id, **kwargs)
             return data
 
-    def create_document_user_with_http_info(self, document_id, document_user_for_create, account_id, **kwargs):
+    def create_document_user_with_http_info(self, document_id, account_id, **kwargs):
         """
         Grants access to a document for a user.
         This method makes a synchronous HTTP request by default. To make an
@@ -76,19 +76,19 @@ class DocumentsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_document_user_with_http_info(document_id, document_user_for_create, account_id, callback=callback_function)
+        >>> thread = api.create_document_user_with_http_info(document_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int document_id:  (required)
-        :param DocumentUserForCreate document_user_for_create:  (required)
         :param str account_id: (required)
+        :param DocumentUserForCreate body:
         :return: DocumentUser
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['document_id', 'document_user_for_create', 'account_id']
+        all_params = ['document_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -106,9 +106,6 @@ class DocumentsApi(object):
         # verify the required parameter 'document_id' is set
         if ('document_id' not in params) or (params['document_id'] is None):
             raise ValueError("Missing the required parameter `document_id` when calling `create_document_user`")
-        # verify the required parameter 'document_user_for_create' is set
-        if ('document_user_for_create' not in params) or (params['document_user_for_create'] is None):
-            raise ValueError("Missing the required parameter `document_user_for_create` when calling `create_document_user`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_document_user`")
@@ -131,15 +128,15 @@ class DocumentsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'document_user_for_create' in params:
-            body_params = params['document_user_for_create']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -247,7 +244,7 @@ class DocumentsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -359,7 +356,7 @@ class DocumentsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []

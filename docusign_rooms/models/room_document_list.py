@@ -36,6 +36,7 @@ class RoomDocumentList(object):
         'end_position': 'int',
         'next_uri': 'str',
         'prior_uri': 'str',
+        'total_row_count': 'int',
         'documents': 'list[RoomDocument]'
     }
 
@@ -45,10 +46,11 @@ class RoomDocumentList(object):
         'end_position': 'endPosition',
         'next_uri': 'nextUri',
         'prior_uri': 'priorUri',
+        'total_row_count': 'totalRowCount',
         'documents': 'documents'
     }
 
-    def __init__(self, result_set_size=None, start_position=None, end_position=None, next_uri=None, prior_uri=None, documents=None):  # noqa: E501
+    def __init__(self, result_set_size=None, start_position=None, end_position=None, next_uri=None, prior_uri=None, total_row_count=None, documents=None):  # noqa: E501
         """RoomDocumentList - a model defined in Swagger"""  # noqa: E501
 
         self._result_set_size = None
@@ -56,6 +58,7 @@ class RoomDocumentList(object):
         self._end_position = None
         self._next_uri = None
         self._prior_uri = None
+        self._total_row_count = None
         self._documents = None
         self.discriminator = None
 
@@ -69,6 +72,8 @@ class RoomDocumentList(object):
             self.next_uri = next_uri
         if prior_uri is not None:
             self.prior_uri = prior_uri
+        if total_row_count is not None:
+            self.total_row_count = total_row_count
         if documents is not None:
             self.documents = documents
 
@@ -176,6 +181,27 @@ class RoomDocumentList(object):
         """
 
         self._prior_uri = prior_uri
+
+    @property
+    def total_row_count(self):
+        """Gets the total_row_count of this RoomDocumentList.  # noqa: E501
+
+
+        :return: The total_row_count of this RoomDocumentList.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_row_count
+
+    @total_row_count.setter
+    def total_row_count(self, total_row_count):
+        """Sets the total_row_count of this RoomDocumentList.
+
+
+        :param total_row_count: The total_row_count of this RoomDocumentList.  # noqa: E501
+        :type: int
+        """
+
+        self._total_row_count = total_row_count
 
     @property
     def documents(self):

@@ -39,6 +39,7 @@ class Document(object):
         'folder_id': 'int',
         'created_date': 'datetime',
         'is_signed': 'bool',
+        'content_type': 'str',
         'base64_contents': 'str'
     }
 
@@ -51,10 +52,11 @@ class Document(object):
         'folder_id': 'folderId',
         'created_date': 'createdDate',
         'is_signed': 'isSigned',
+        'content_type': 'contentType',
         'base64_contents': 'base64Contents'
     }
 
-    def __init__(self, document_id=None, name=None, room_id=None, owner_id=None, size=None, folder_id=None, created_date=None, is_signed=None, base64_contents=None):  # noqa: E501
+    def __init__(self, document_id=None, name=None, room_id=None, owner_id=None, size=None, folder_id=None, created_date=None, is_signed=None, content_type=None, base64_contents=None):  # noqa: E501
         """Document - a model defined in Swagger"""  # noqa: E501
 
         self._document_id = None
@@ -65,6 +67,7 @@ class Document(object):
         self._folder_id = None
         self._created_date = None
         self._is_signed = None
+        self._content_type = None
         self._base64_contents = None
         self.discriminator = None
 
@@ -83,6 +86,8 @@ class Document(object):
             self.created_date = created_date
         if is_signed is not None:
             self.is_signed = is_signed
+        if content_type is not None:
+            self.content_type = content_type
         self.base64_contents = base64_contents
 
     @property
@@ -254,6 +259,27 @@ class Document(object):
         """
 
         self._is_signed = is_signed
+
+    @property
+    def content_type(self):
+        """Gets the content_type of this Document.  # noqa: E501
+
+
+        :return: The content_type of this Document.  # noqa: E501
+        :rtype: str
+        """
+        return self._content_type
+
+    @content_type.setter
+    def content_type(self, content_type):
+        """Sets the content_type of this Document.
+
+
+        :param content_type: The content_type of this Document.  # noqa: E501
+        :type: str
+        """
+
+        self._content_type = content_type
 
     @property
     def base64_contents(self):

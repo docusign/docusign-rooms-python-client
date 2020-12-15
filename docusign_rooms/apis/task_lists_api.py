@@ -40,7 +40,7 @@ class TaskListsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_task_list(self, room_id, task_list, account_id, **kwargs):
+    def create_task_list(self, room_id, account_id, **kwargs):
         """
         Add a task list to a room based on a task list template.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,25 +49,25 @@ class TaskListsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_task_list(room_id, task_list, account_id, callback=callback_function)
+        >>> thread = api.create_task_list(room_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Room ID. (required)
-        :param TaskListForCreate task_list: Details for task list creation. (required)
         :param str account_id: (required)
+        :param TaskListForCreate body:
         :return: TaskList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_task_list_with_http_info(room_id, task_list, account_id, **kwargs)
+            return self.create_task_list_with_http_info(room_id, account_id, **kwargs)
         else:
-            (data) = self.create_task_list_with_http_info(room_id, task_list, account_id, **kwargs)
+            (data) = self.create_task_list_with_http_info(room_id, account_id, **kwargs)
             return data
 
-    def create_task_list_with_http_info(self, room_id, task_list, account_id, **kwargs):
+    def create_task_list_with_http_info(self, room_id, account_id, **kwargs):
         """
         Add a task list to a room based on a task list template.
         This method makes a synchronous HTTP request by default. To make an
@@ -76,19 +76,19 @@ class TaskListsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_task_list_with_http_info(room_id, task_list, account_id, callback=callback_function)
+        >>> thread = api.create_task_list_with_http_info(room_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Room ID. (required)
-        :param TaskListForCreate task_list: Details for task list creation. (required)
         :param str account_id: (required)
+        :param TaskListForCreate body:
         :return: TaskList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['room_id', 'task_list', 'account_id']
+        all_params = ['room_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -106,9 +106,6 @@ class TaskListsApi(object):
         # verify the required parameter 'room_id' is set
         if ('room_id' not in params) or (params['room_id'] is None):
             raise ValueError("Missing the required parameter `room_id` when calling `create_task_list`")
-        # verify the required parameter 'task_list' is set
-        if ('task_list' not in params) or (params['task_list'] is None):
-            raise ValueError("Missing the required parameter `task_list` when calling `create_task_list`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_task_list`")
@@ -131,15 +128,15 @@ class TaskListsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'task_list' in params:
-            body_params = params['task_list']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -161,7 +158,7 @@ class TaskListsApi(object):
 
     def delete_task_list(self, task_list_id, account_id, **kwargs):
         """
-        Deletes a task list. If there are attached documents they will remain in the associated room.
+        Deletes a task list. If there are attached documents they will remain in the associated 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -187,7 +184,7 @@ class TaskListsApi(object):
 
     def delete_task_list_with_http_info(self, task_list_id, account_id, **kwargs):
         """
-        Deletes a task list. If there are attached documents they will remain in the associated room.
+        Deletes a task list. If there are attached documents they will remain in the associated 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -247,7 +244,7 @@ class TaskListsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -269,7 +266,7 @@ class TaskListsApi(object):
 
     def get_task_lists(self, room_id, account_id, **kwargs):
         """
-        Returns the summary for all viewable task lists in a room.
+        Returns the summary for all viewable task lists in a 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -295,7 +292,7 @@ class TaskListsApi(object):
 
     def get_task_lists_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Returns the summary for all viewable task lists in a room.
+        Returns the summary for all viewable task lists in a 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -355,7 +352,7 @@ class TaskListsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []

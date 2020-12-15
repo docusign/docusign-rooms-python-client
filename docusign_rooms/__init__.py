@@ -57,6 +57,8 @@ from .client.configuration import Configuration
 from .client.api_exception import ApiException
 
 # import models into sdk package
+from .models.access_level import AccessLevel
+from .models.account_status import AccountStatus
 from .models.account_summary import AccountSummary
 from .models.activity_type import ActivityType
 from .models.api_error import ApiError
@@ -87,9 +89,14 @@ from .models.field_data import FieldData
 from .models.field_data_for_create import FieldDataForCreate
 from .models.field_data_for_update import FieldDataForUpdate
 from .models.field_set import FieldSet
+from .models.fields_custom_data_filter_type import FieldsCustomDataFilterType
 from .models.financing_type import FinancingType
 from .models.form_details import FormDetails
 from .models.form_for_add import FormForAdd
+from .models.form_group import FormGroup
+from .models.form_group_for_create import FormGroupForCreate
+from .models.form_group_for_update import FormGroupForUpdate
+from .models.form_group_form_to_assign import FormGroupFormToAssign
 from .models.form_group_summary import FormGroupSummary
 from .models.form_group_summary_list import FormGroupSummaryList
 from .models.form_library_summary import FormLibrarySummary
@@ -113,9 +120,9 @@ from .models.global_task_responsibility_types import GlobalTaskResponsibilityTyp
 from .models.global_task_statuses import GlobalTaskStatuses
 from .models.global_time_zones import GlobalTimeZones
 from .models.global_transaction_sides import GlobalTransactionSides
+from .models.group_form import GroupForm
 from .models.locked_out_details import LockedOutDetails
-from .models.nullable_field_data import NullableFieldData
-from .models.nullable_permissions import NullablePermissions
+from .models.member_sorting_option import MemberSortingOption
 from .models.office import Office
 from .models.office_for_create import OfficeForCreate
 from .models.office_reference_count import OfficeReferenceCount
@@ -124,6 +131,7 @@ from .models.office_summary import OfficeSummary
 from .models.office_summary_list import OfficeSummaryList
 from .models.origin_of_lead import OriginOfLead
 from .models.permissions import Permissions
+from .models.product_version import ProductVersion
 from .models.property_type import PropertyType
 from .models.region import Region
 from .models.region_reference_count import RegionReferenceCount
@@ -139,12 +147,14 @@ from .models.room import Room
 from .models.room_contact_type import RoomContactType
 from .models.room_document import RoomDocument
 from .models.room_document_list import RoomDocumentList
+from .models.room_document_owner import RoomDocumentOwner
 from .models.room_folder import RoomFolder
 from .models.room_folder_list import RoomFolderList
 from .models.room_for_create import RoomForCreate
 from .models.room_invite import RoomInvite
 from .models.room_invite_response import RoomInviteResponse
 from .models.room_picture import RoomPicture
+from .models.room_status import RoomStatus
 from .models.room_summary import RoomSummary
 from .models.room_summary_list import RoomSummaryList
 from .models.room_template import RoomTemplate
@@ -152,6 +162,7 @@ from .models.room_templates_summary_list import RoomTemplatesSummaryList
 from .models.room_user import RoomUser
 from .models.room_user_for_update import RoomUserForUpdate
 from .models.room_user_removal_detail import RoomUserRemovalDetail
+from .models.room_user_sorting_option import RoomUserSortingOption
 from .models.room_user_summary import RoomUserSummary
 from .models.room_users_result import RoomUsersResult
 from .models.select_list_field_option import SelectListFieldOption
