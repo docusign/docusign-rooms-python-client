@@ -123,7 +123,7 @@ class FieldsApi(object):
         query_params = {}
         if 'fields_custom_data_filters' in params:
             query_params['fieldsCustomDataFilters'] = params['fields_custom_data_filters']
-            collection_formats['fieldsCustomDataFilters'] = 'multi'
+            collection_formats['fieldsCustomDataFilters'] = 'csv'
 
         header_params = {}
 
@@ -133,7 +133,7 @@ class FieldsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []

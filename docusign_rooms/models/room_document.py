@@ -38,7 +38,10 @@ class RoomDocument(object):
         'folder_id': 'int',
         'created_date': 'datetime',
         'is_signed': 'bool',
-        'docu_sign_form_id': 'str'
+        'docu_sign_form_id': 'str',
+        'is_archived': 'bool',
+        'is_virtual': 'bool',
+        'owner': 'RoomDocumentOwner'
     }
 
     attribute_map = {
@@ -49,10 +52,13 @@ class RoomDocument(object):
         'folder_id': 'folderId',
         'created_date': 'createdDate',
         'is_signed': 'isSigned',
-        'docu_sign_form_id': 'docuSignFormId'
+        'docu_sign_form_id': 'docuSignFormId',
+        'is_archived': 'isArchived',
+        'is_virtual': 'isVirtual',
+        'owner': 'owner'
     }
 
-    def __init__(self, document_id=None, name=None, owner_id=None, size=None, folder_id=None, created_date=None, is_signed=None, docu_sign_form_id=None):  # noqa: E501
+    def __init__(self, document_id=None, name=None, owner_id=None, size=None, folder_id=None, created_date=None, is_signed=None, docu_sign_form_id=None, is_archived=None, is_virtual=None, owner=None):  # noqa: E501
         """RoomDocument - a model defined in Swagger"""  # noqa: E501
 
         self._document_id = None
@@ -63,6 +69,9 @@ class RoomDocument(object):
         self._created_date = None
         self._is_signed = None
         self._docu_sign_form_id = None
+        self._is_archived = None
+        self._is_virtual = None
+        self._owner = None
         self.discriminator = None
 
         if document_id is not None:
@@ -81,6 +90,12 @@ class RoomDocument(object):
             self.is_signed = is_signed
         if docu_sign_form_id is not None:
             self.docu_sign_form_id = docu_sign_form_id
+        if is_archived is not None:
+            self.is_archived = is_archived
+        if is_virtual is not None:
+            self.is_virtual = is_virtual
+        if owner is not None:
+            self.owner = owner
 
     @property
     def document_id(self):
@@ -249,6 +264,69 @@ class RoomDocument(object):
         """
 
         self._docu_sign_form_id = docu_sign_form_id
+
+    @property
+    def is_archived(self):
+        """Gets the is_archived of this RoomDocument.  # noqa: E501
+
+
+        :return: The is_archived of this RoomDocument.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_archived
+
+    @is_archived.setter
+    def is_archived(self, is_archived):
+        """Sets the is_archived of this RoomDocument.
+
+
+        :param is_archived: The is_archived of this RoomDocument.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_archived = is_archived
+
+    @property
+    def is_virtual(self):
+        """Gets the is_virtual of this RoomDocument.  # noqa: E501
+
+
+        :return: The is_virtual of this RoomDocument.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_virtual
+
+    @is_virtual.setter
+    def is_virtual(self, is_virtual):
+        """Sets the is_virtual of this RoomDocument.
+
+
+        :param is_virtual: The is_virtual of this RoomDocument.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_virtual = is_virtual
+
+    @property
+    def owner(self):
+        """Gets the owner of this RoomDocument.  # noqa: E501
+
+
+        :return: The owner of this RoomDocument.  # noqa: E501
+        :rtype: RoomDocumentOwner
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this RoomDocument.
+
+
+        :param owner: The owner of this RoomDocument.  # noqa: E501
+        :type: RoomDocumentOwner
+        """
+
+        self._owner = owner
 
     def to_dict(self):
         """Returns the model properties as a dict"""

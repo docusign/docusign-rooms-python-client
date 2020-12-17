@@ -40,7 +40,7 @@ class ExternalFormFillSessionsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_external_form_fill_session(self, form_fill_session_for_create, account_id, **kwargs):
+    def create_external_form_fill_session(self, account_id, **kwargs):
         """
         Creates an external form fill session.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,24 +49,24 @@ class ExternalFormFillSessionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_external_form_fill_session(form_fill_session_for_create, account_id, callback=callback_function)
+        >>> thread = api.create_external_form_fill_session(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ExternalFormFillSessionForCreate form_fill_session_for_create: (required)
         :param str account_id: (required)
+        :param ExternalFormFillSessionForCreate body:
         :return: ExternalFormFillSession
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_external_form_fill_session_with_http_info(form_fill_session_for_create, account_id, **kwargs)
+            return self.create_external_form_fill_session_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.create_external_form_fill_session_with_http_info(form_fill_session_for_create, account_id, **kwargs)
+            (data) = self.create_external_form_fill_session_with_http_info(account_id, **kwargs)
             return data
 
-    def create_external_form_fill_session_with_http_info(self, form_fill_session_for_create, account_id, **kwargs):
+    def create_external_form_fill_session_with_http_info(self, account_id, **kwargs):
         """
         Creates an external form fill session.
         This method makes a synchronous HTTP request by default. To make an
@@ -75,18 +75,18 @@ class ExternalFormFillSessionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_external_form_fill_session_with_http_info(form_fill_session_for_create, account_id, callback=callback_function)
+        >>> thread = api.create_external_form_fill_session_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ExternalFormFillSessionForCreate form_fill_session_for_create: (required)
         :param str account_id: (required)
+        :param ExternalFormFillSessionForCreate body:
         :return: ExternalFormFillSession
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['form_fill_session_for_create', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -101,9 +101,6 @@ class ExternalFormFillSessionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'form_fill_session_for_create' is set
-        if ('form_fill_session_for_create' not in params) or (params['form_fill_session_for_create'] is None):
-            raise ValueError("Missing the required parameter `form_fill_session_for_create` when calling `create_external_form_fill_session`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_external_form_fill_session`")
@@ -124,15 +121,15 @@ class ExternalFormFillSessionsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'form_fill_session_for_create' in params:
-            body_params = params['form_fill_session_for_create']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

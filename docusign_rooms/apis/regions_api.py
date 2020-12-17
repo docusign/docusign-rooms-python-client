@@ -40,7 +40,7 @@ class RegionsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_region(self, region, account_id, **kwargs):
+    def create_region(self, account_id, **kwargs):
         """
         Creates a new region for a company
         This method makes a synchronous HTTP request by default. To make an
@@ -49,24 +49,24 @@ class RegionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_region(region, account_id, callback=callback_function)
+        >>> thread = api.create_region(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Region region: The information required to create a new region for the caller's company (required)
         :param str account_id: (required)
+        :param Region body:
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_region_with_http_info(region, account_id, **kwargs)
+            return self.create_region_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.create_region_with_http_info(region, account_id, **kwargs)
+            (data) = self.create_region_with_http_info(account_id, **kwargs)
             return data
 
-    def create_region_with_http_info(self, region, account_id, **kwargs):
+    def create_region_with_http_info(self, account_id, **kwargs):
         """
         Creates a new region for a company
         This method makes a synchronous HTTP request by default. To make an
@@ -75,18 +75,18 @@ class RegionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_region_with_http_info(region, account_id, callback=callback_function)
+        >>> thread = api.create_region_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Region region: The information required to create a new region for the caller's company (required)
         :param str account_id: (required)
+        :param Region body:
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['region', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -101,9 +101,6 @@ class RegionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'region' is set
-        if ('region' not in params) or (params['region'] is None):
-            raise ValueError("Missing the required parameter `region` when calling `create_region`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_region`")
@@ -124,15 +121,15 @@ class RegionsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'region' in params:
-            body_params = params['region']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -240,7 +237,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -348,7 +345,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -456,7 +453,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -478,7 +475,7 @@ class RegionsApi(object):
 
     def get_regions(self, account_id, **kwargs):
         """
-        Get account regions.
+        Get account 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -506,7 +503,7 @@ class RegionsApi(object):
 
     def get_regions_with_http_info(self, account_id, **kwargs):
         """
-        Get account regions.
+        Get account 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -569,7 +566,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []

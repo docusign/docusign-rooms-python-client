@@ -54,8 +54,9 @@ class RoomTemplatesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
-        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level templates. If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
+        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level  If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
         :param bool only_assignable: Get list of templates you have access to. Default value false.
+        :param bool only_enabled: When set to true, only returns room templates that are not disabled.
         :param int count: Number of room templates to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :return: RoomTemplatesSummaryList
@@ -83,8 +84,9 @@ class RoomTemplatesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
-        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level templates. If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
+        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level  If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
         :param bool only_assignable: Get list of templates you have access to. Default value false.
+        :param bool only_enabled: When set to true, only returns room templates that are not disabled.
         :param int count: Number of room templates to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :return: RoomTemplatesSummaryList
@@ -92,7 +94,7 @@ class RoomTemplatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'office_id', 'only_assignable', 'count', 'start_position']
+        all_params = ['account_id', 'office_id', 'only_assignable', 'only_enabled', 'count', 'start_position']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -124,6 +126,8 @@ class RoomTemplatesApi(object):
             query_params['officeId'] = params['office_id']
         if 'only_assignable' in params:
             query_params['onlyAssignable'] = params['only_assignable']
+        if 'only_enabled' in params:
+            query_params['onlyEnabled'] = params['only_enabled']
         if 'count' in params:
             query_params['count'] = params['count']
         if 'start_position' in params:
@@ -137,7 +141,7 @@ class RoomTemplatesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []

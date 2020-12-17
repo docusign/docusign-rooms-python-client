@@ -36,7 +36,7 @@ class ClassicManagerToInvite(object):
         'email': 'str',
         'default_office_id': 'int',
         'title_id': 'int',
-        'access_level': 'str',
+        'access_level': 'AccessLevel',
         'permissions': 'ClassicManagerPermissions',
         'offices': 'list[int]',
         'regions': 'list[int]',
@@ -206,7 +206,7 @@ class ClassicManagerToInvite(object):
 
 
         :return: The access_level of this ClassicManagerToInvite.  # noqa: E501
-        :rtype: str
+        :rtype: AccessLevel
         """
         return self._access_level
 
@@ -216,16 +216,10 @@ class ClassicManagerToInvite(object):
 
 
         :param access_level: The access_level of this ClassicManagerToInvite.  # noqa: E501
-        :type: str
+        :type: AccessLevel
         """
         if access_level is None:
             raise ValueError("Invalid value for `access_level`, must not be `None`")  # noqa: E501
-        allowed_values = ["Contributor", "Office", "Region", "Company", "Admin"]  # noqa: E501
-        if access_level not in allowed_values:
-            raise ValueError(
-                "Invalid value for `access_level` ({0}), must be one of {1}"  # noqa: E501
-                .format(access_level, allowed_values)
-            )
 
         self._access_level = access_level
 

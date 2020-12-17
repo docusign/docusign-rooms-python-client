@@ -36,7 +36,8 @@ class RoomUsersResult(object):
         'start_position': 'int',
         'end_position': 'int',
         'next_uri': 'str',
-        'prior_uri': 'str'
+        'prior_uri': 'str',
+        'total_row_count': 'int'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class RoomUsersResult(object):
         'start_position': 'startPosition',
         'end_position': 'endPosition',
         'next_uri': 'nextUri',
-        'prior_uri': 'priorUri'
+        'prior_uri': 'priorUri',
+        'total_row_count': 'totalRowCount'
     }
 
-    def __init__(self, users=None, result_set_size=None, start_position=None, end_position=None, next_uri=None, prior_uri=None):  # noqa: E501
+    def __init__(self, users=None, result_set_size=None, start_position=None, end_position=None, next_uri=None, prior_uri=None, total_row_count=None):  # noqa: E501
         """RoomUsersResult - a model defined in Swagger"""  # noqa: E501
 
         self._users = None
@@ -57,6 +59,7 @@ class RoomUsersResult(object):
         self._end_position = None
         self._next_uri = None
         self._prior_uri = None
+        self._total_row_count = None
         self.discriminator = None
 
         if users is not None:
@@ -71,6 +74,8 @@ class RoomUsersResult(object):
             self.next_uri = next_uri
         if prior_uri is not None:
             self.prior_uri = prior_uri
+        if total_row_count is not None:
+            self.total_row_count = total_row_count
 
     @property
     def users(self):
@@ -197,6 +202,27 @@ class RoomUsersResult(object):
         """
 
         self._prior_uri = prior_uri
+
+    @property
+    def total_row_count(self):
+        """Gets the total_row_count of this RoomUsersResult.  # noqa: E501
+
+
+        :return: The total_row_count of this RoomUsersResult.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_row_count
+
+    @total_row_count.setter
+    def total_row_count(self, total_row_count):
+        """Sets the total_row_count of this RoomUsersResult.
+
+
+        :param total_row_count: The total_row_count of this RoomUsersResult.  # noqa: E501
+        :type: int
+        """
+
+        self._total_row_count = total_row_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

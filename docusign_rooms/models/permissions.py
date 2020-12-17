@@ -43,8 +43,13 @@ class Permissions(object):
         'can_copy_room_details': 'bool',
         'can_edit_any_room_role': 'bool',
         'can_edit_invited_room_role': 'bool',
+        'can_edit_room_side': 'bool',
         'can_manage_any_user_room_access': 'bool',
         'can_manage_invited_user_room_access': 'bool',
+        'is_hidden_in_room': 'bool',
+        'can_manage_room_owners': 'bool',
+        'can_delete_rooms': 'bool',
+        'can_connect_to_mortgage_cadence': 'bool',
         'can_view_room_details': 'bool',
         'can_view_and_edit_room_details': 'bool',
         'can_send_room_details_to_lone_wolf': 'bool',
@@ -71,7 +76,8 @@ class Permissions(object):
         'can_manage_task_templates_for_all_regions_all_offices': 'bool',
         'can_apply_room_templates': 'bool',
         'can_add_tasks_to_rooms': 'bool',
-        'can_create_and_manage_packages': 'bool',
+        'can_review_any_task': 'bool',
+        'can_manage_docs_on_any_task': 'bool',
         'can_add_member_and_set_role_lower_access_level': 'bool',
         'can_add_member_and_set_role_same_access_level': 'bool',
         'can_change_member_role_lower_access_level': 'bool',
@@ -82,6 +88,7 @@ class Permissions(object):
         'can_remove_company_member_same_access_level': 'bool',
         'can_manage_account': 'bool',
         'can_manage_logo': 'bool',
+        'can_manage_roles_and_permissions': 'bool',
         'can_manage_room_details': 'bool',
         'can_manage_room_templates': 'bool',
         'can_manage_integration_settings': 'bool'
@@ -100,8 +107,13 @@ class Permissions(object):
         'can_copy_room_details': 'canCopyRoomDetails',
         'can_edit_any_room_role': 'canEditAnyRoomRole',
         'can_edit_invited_room_role': 'canEditInvitedRoomRole',
+        'can_edit_room_side': 'canEditRoomSide',
         'can_manage_any_user_room_access': 'canManageAnyUserRoomAccess',
         'can_manage_invited_user_room_access': 'canManageInvitedUserRoomAccess',
+        'is_hidden_in_room': 'isHiddenInRoom',
+        'can_manage_room_owners': 'canManageRoomOwners',
+        'can_delete_rooms': 'canDeleteRooms',
+        'can_connect_to_mortgage_cadence': 'canConnectToMortgageCadence',
         'can_view_room_details': 'canViewRoomDetails',
         'can_view_and_edit_room_details': 'canViewAndEditRoomDetails',
         'can_send_room_details_to_lone_wolf': 'canSendRoomDetailsToLoneWolf',
@@ -128,7 +140,8 @@ class Permissions(object):
         'can_manage_task_templates_for_all_regions_all_offices': 'canManageTaskTemplatesForAllRegionsAllOffices',
         'can_apply_room_templates': 'canApplyRoomTemplates',
         'can_add_tasks_to_rooms': 'canAddTasksToRooms',
-        'can_create_and_manage_packages': 'canCreateAndManagePackages',
+        'can_review_any_task': 'canReviewAnyTask',
+        'can_manage_docs_on_any_task': 'canManageDocsOnAnyTask',
         'can_add_member_and_set_role_lower_access_level': 'canAddMemberAndSetRoleLowerAccessLevel',
         'can_add_member_and_set_role_same_access_level': 'canAddMemberAndSetRoleSameAccessLevel',
         'can_change_member_role_lower_access_level': 'canChangeMemberRoleLowerAccessLevel',
@@ -139,12 +152,13 @@ class Permissions(object):
         'can_remove_company_member_same_access_level': 'canRemoveCompanyMemberSameAccessLevel',
         'can_manage_account': 'canManageAccount',
         'can_manage_logo': 'canManageLogo',
+        'can_manage_roles_and_permissions': 'canManageRolesAndPermissions',
         'can_manage_room_details': 'canManageRoomDetails',
         'can_manage_room_templates': 'canManageRoomTemplates',
         'can_manage_integration_settings': 'canManageIntegrationSettings'
     }
 
-    def __init__(self, can_add_users_to_rooms=None, can_create_rooms=None, can_submit_rooms_for_review=None, can_close_rooms=None, can_reopen_rooms=None, can_delete_owned_rooms=None, auto_access_to_rooms=None, can_export_room_activity_details_people=None, is_visible_in_rooms=None, can_copy_room_details=None, can_edit_any_room_role=None, can_edit_invited_room_role=None, can_manage_any_user_room_access=None, can_manage_invited_user_room_access=None, can_view_room_details=None, can_view_and_edit_room_details=None, can_send_room_details_to_lone_wolf=None, can_add_documents=None, can_add_documents_from_form_groups=None, can_add_documents_from_form_libraries=None, documents_viewable_by_others_in_room_from_office=None, documents_auto_owned_by_peers=None, can_delete_owned_documents=None, can_manage_shared_docs=None, can_manage_form_groups=None, can_share_docs_not_owned=None, can_add_tasks_to_any_task_lists=None, can_edit_editable_tasks=None, can_edit_any_tasks=None, can_delete_deletable_tasks=None, can_delete_any_tasks=None, can_apply_task_list=None, can_remove_any_task_list=None, can_submit_task_list=None, can_auto_submit_task_list=None, can_review_task_list=None, can_auto_approve_task_list=None, can_manage_task_templates_for_all_regions_all_offices=None, can_apply_room_templates=None, can_add_tasks_to_rooms=None, can_create_and_manage_packages=None, can_add_member_and_set_role_lower_access_level=None, can_add_member_and_set_role_same_access_level=None, can_change_member_role_lower_access_level=None, can_change_member_role_same_access_level=None, can_manage_member_lower_access_level=None, can_manage_member_same_access_level=None, can_remove_company_member_lower_access_level=None, can_remove_company_member_same_access_level=None, can_manage_account=None, can_manage_logo=None, can_manage_room_details=None, can_manage_room_templates=None, can_manage_integration_settings=None):  # noqa: E501
+    def __init__(self, can_add_users_to_rooms=None, can_create_rooms=None, can_submit_rooms_for_review=None, can_close_rooms=None, can_reopen_rooms=None, can_delete_owned_rooms=None, auto_access_to_rooms=None, can_export_room_activity_details_people=None, is_visible_in_rooms=None, can_copy_room_details=None, can_edit_any_room_role=None, can_edit_invited_room_role=None, can_edit_room_side=None, can_manage_any_user_room_access=None, can_manage_invited_user_room_access=None, is_hidden_in_room=None, can_manage_room_owners=None, can_delete_rooms=None, can_connect_to_mortgage_cadence=None, can_view_room_details=None, can_view_and_edit_room_details=None, can_send_room_details_to_lone_wolf=None, can_add_documents=None, can_add_documents_from_form_groups=None, can_add_documents_from_form_libraries=None, documents_viewable_by_others_in_room_from_office=None, documents_auto_owned_by_peers=None, can_delete_owned_documents=None, can_manage_shared_docs=None, can_manage_form_groups=None, can_share_docs_not_owned=None, can_add_tasks_to_any_task_lists=None, can_edit_editable_tasks=None, can_edit_any_tasks=None, can_delete_deletable_tasks=None, can_delete_any_tasks=None, can_apply_task_list=None, can_remove_any_task_list=None, can_submit_task_list=None, can_auto_submit_task_list=None, can_review_task_list=None, can_auto_approve_task_list=None, can_manage_task_templates_for_all_regions_all_offices=None, can_apply_room_templates=None, can_add_tasks_to_rooms=None, can_review_any_task=None, can_manage_docs_on_any_task=None, can_add_member_and_set_role_lower_access_level=None, can_add_member_and_set_role_same_access_level=None, can_change_member_role_lower_access_level=None, can_change_member_role_same_access_level=None, can_manage_member_lower_access_level=None, can_manage_member_same_access_level=None, can_remove_company_member_lower_access_level=None, can_remove_company_member_same_access_level=None, can_manage_account=None, can_manage_logo=None, can_manage_roles_and_permissions=None, can_manage_room_details=None, can_manage_room_templates=None, can_manage_integration_settings=None):  # noqa: E501
         """Permissions - a model defined in Swagger"""  # noqa: E501
 
         self._can_add_users_to_rooms = None
@@ -159,8 +173,13 @@ class Permissions(object):
         self._can_copy_room_details = None
         self._can_edit_any_room_role = None
         self._can_edit_invited_room_role = None
+        self._can_edit_room_side = None
         self._can_manage_any_user_room_access = None
         self._can_manage_invited_user_room_access = None
+        self._is_hidden_in_room = None
+        self._can_manage_room_owners = None
+        self._can_delete_rooms = None
+        self._can_connect_to_mortgage_cadence = None
         self._can_view_room_details = None
         self._can_view_and_edit_room_details = None
         self._can_send_room_details_to_lone_wolf = None
@@ -187,7 +206,8 @@ class Permissions(object):
         self._can_manage_task_templates_for_all_regions_all_offices = None
         self._can_apply_room_templates = None
         self._can_add_tasks_to_rooms = None
-        self._can_create_and_manage_packages = None
+        self._can_review_any_task = None
+        self._can_manage_docs_on_any_task = None
         self._can_add_member_and_set_role_lower_access_level = None
         self._can_add_member_and_set_role_same_access_level = None
         self._can_change_member_role_lower_access_level = None
@@ -198,6 +218,7 @@ class Permissions(object):
         self._can_remove_company_member_same_access_level = None
         self._can_manage_account = None
         self._can_manage_logo = None
+        self._can_manage_roles_and_permissions = None
         self._can_manage_room_details = None
         self._can_manage_room_templates = None
         self._can_manage_integration_settings = None
@@ -227,10 +248,20 @@ class Permissions(object):
             self.can_edit_any_room_role = can_edit_any_room_role
         if can_edit_invited_room_role is not None:
             self.can_edit_invited_room_role = can_edit_invited_room_role
+        if can_edit_room_side is not None:
+            self.can_edit_room_side = can_edit_room_side
         if can_manage_any_user_room_access is not None:
             self.can_manage_any_user_room_access = can_manage_any_user_room_access
         if can_manage_invited_user_room_access is not None:
             self.can_manage_invited_user_room_access = can_manage_invited_user_room_access
+        if is_hidden_in_room is not None:
+            self.is_hidden_in_room = is_hidden_in_room
+        if can_manage_room_owners is not None:
+            self.can_manage_room_owners = can_manage_room_owners
+        if can_delete_rooms is not None:
+            self.can_delete_rooms = can_delete_rooms
+        if can_connect_to_mortgage_cadence is not None:
+            self.can_connect_to_mortgage_cadence = can_connect_to_mortgage_cadence
         if can_view_room_details is not None:
             self.can_view_room_details = can_view_room_details
         if can_view_and_edit_room_details is not None:
@@ -283,8 +314,10 @@ class Permissions(object):
             self.can_apply_room_templates = can_apply_room_templates
         if can_add_tasks_to_rooms is not None:
             self.can_add_tasks_to_rooms = can_add_tasks_to_rooms
-        if can_create_and_manage_packages is not None:
-            self.can_create_and_manage_packages = can_create_and_manage_packages
+        if can_review_any_task is not None:
+            self.can_review_any_task = can_review_any_task
+        if can_manage_docs_on_any_task is not None:
+            self.can_manage_docs_on_any_task = can_manage_docs_on_any_task
         if can_add_member_and_set_role_lower_access_level is not None:
             self.can_add_member_and_set_role_lower_access_level = can_add_member_and_set_role_lower_access_level
         if can_add_member_and_set_role_same_access_level is not None:
@@ -305,6 +338,8 @@ class Permissions(object):
             self.can_manage_account = can_manage_account
         if can_manage_logo is not None:
             self.can_manage_logo = can_manage_logo
+        if can_manage_roles_and_permissions is not None:
+            self.can_manage_roles_and_permissions = can_manage_roles_and_permissions
         if can_manage_room_details is not None:
             self.can_manage_room_details = can_manage_room_details
         if can_manage_room_templates is not None:
@@ -565,6 +600,27 @@ class Permissions(object):
         self._can_edit_invited_room_role = can_edit_invited_room_role
 
     @property
+    def can_edit_room_side(self):
+        """Gets the can_edit_room_side of this Permissions.  # noqa: E501
+
+
+        :return: The can_edit_room_side of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_edit_room_side
+
+    @can_edit_room_side.setter
+    def can_edit_room_side(self, can_edit_room_side):
+        """Sets the can_edit_room_side of this Permissions.
+
+
+        :param can_edit_room_side: The can_edit_room_side of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_edit_room_side = can_edit_room_side
+
+    @property
     def can_manage_any_user_room_access(self):
         """Gets the can_manage_any_user_room_access of this Permissions.  # noqa: E501
 
@@ -605,6 +661,90 @@ class Permissions(object):
         """
 
         self._can_manage_invited_user_room_access = can_manage_invited_user_room_access
+
+    @property
+    def is_hidden_in_room(self):
+        """Gets the is_hidden_in_room of this Permissions.  # noqa: E501
+
+
+        :return: The is_hidden_in_room of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_hidden_in_room
+
+    @is_hidden_in_room.setter
+    def is_hidden_in_room(self, is_hidden_in_room):
+        """Sets the is_hidden_in_room of this Permissions.
+
+
+        :param is_hidden_in_room: The is_hidden_in_room of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_hidden_in_room = is_hidden_in_room
+
+    @property
+    def can_manage_room_owners(self):
+        """Gets the can_manage_room_owners of this Permissions.  # noqa: E501
+
+
+        :return: The can_manage_room_owners of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_manage_room_owners
+
+    @can_manage_room_owners.setter
+    def can_manage_room_owners(self, can_manage_room_owners):
+        """Sets the can_manage_room_owners of this Permissions.
+
+
+        :param can_manage_room_owners: The can_manage_room_owners of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_manage_room_owners = can_manage_room_owners
+
+    @property
+    def can_delete_rooms(self):
+        """Gets the can_delete_rooms of this Permissions.  # noqa: E501
+
+
+        :return: The can_delete_rooms of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_delete_rooms
+
+    @can_delete_rooms.setter
+    def can_delete_rooms(self, can_delete_rooms):
+        """Sets the can_delete_rooms of this Permissions.
+
+
+        :param can_delete_rooms: The can_delete_rooms of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_delete_rooms = can_delete_rooms
+
+    @property
+    def can_connect_to_mortgage_cadence(self):
+        """Gets the can_connect_to_mortgage_cadence of this Permissions.  # noqa: E501
+
+
+        :return: The can_connect_to_mortgage_cadence of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_connect_to_mortgage_cadence
+
+    @can_connect_to_mortgage_cadence.setter
+    def can_connect_to_mortgage_cadence(self, can_connect_to_mortgage_cadence):
+        """Sets the can_connect_to_mortgage_cadence of this Permissions.
+
+
+        :param can_connect_to_mortgage_cadence: The can_connect_to_mortgage_cadence of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_connect_to_mortgage_cadence = can_connect_to_mortgage_cadence
 
     @property
     def can_view_room_details(self):
@@ -1153,25 +1293,46 @@ class Permissions(object):
         self._can_add_tasks_to_rooms = can_add_tasks_to_rooms
 
     @property
-    def can_create_and_manage_packages(self):
-        """Gets the can_create_and_manage_packages of this Permissions.  # noqa: E501
+    def can_review_any_task(self):
+        """Gets the can_review_any_task of this Permissions.  # noqa: E501
 
 
-        :return: The can_create_and_manage_packages of this Permissions.  # noqa: E501
+        :return: The can_review_any_task of this Permissions.  # noqa: E501
         :rtype: bool
         """
-        return self._can_create_and_manage_packages
+        return self._can_review_any_task
 
-    @can_create_and_manage_packages.setter
-    def can_create_and_manage_packages(self, can_create_and_manage_packages):
-        """Sets the can_create_and_manage_packages of this Permissions.
+    @can_review_any_task.setter
+    def can_review_any_task(self, can_review_any_task):
+        """Sets the can_review_any_task of this Permissions.
 
 
-        :param can_create_and_manage_packages: The can_create_and_manage_packages of this Permissions.  # noqa: E501
+        :param can_review_any_task: The can_review_any_task of this Permissions.  # noqa: E501
         :type: bool
         """
 
-        self._can_create_and_manage_packages = can_create_and_manage_packages
+        self._can_review_any_task = can_review_any_task
+
+    @property
+    def can_manage_docs_on_any_task(self):
+        """Gets the can_manage_docs_on_any_task of this Permissions.  # noqa: E501
+
+
+        :return: The can_manage_docs_on_any_task of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_manage_docs_on_any_task
+
+    @can_manage_docs_on_any_task.setter
+    def can_manage_docs_on_any_task(self, can_manage_docs_on_any_task):
+        """Sets the can_manage_docs_on_any_task of this Permissions.
+
+
+        :param can_manage_docs_on_any_task: The can_manage_docs_on_any_task of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_manage_docs_on_any_task = can_manage_docs_on_any_task
 
     @property
     def can_add_member_and_set_role_lower_access_level(self):
@@ -1382,6 +1543,27 @@ class Permissions(object):
         """
 
         self._can_manage_logo = can_manage_logo
+
+    @property
+    def can_manage_roles_and_permissions(self):
+        """Gets the can_manage_roles_and_permissions of this Permissions.  # noqa: E501
+
+
+        :return: The can_manage_roles_and_permissions of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_manage_roles_and_permissions
+
+    @can_manage_roles_and_permissions.setter
+    def can_manage_roles_and_permissions(self, can_manage_roles_and_permissions):
+        """Sets the can_manage_roles_and_permissions of this Permissions.
+
+
+        :param can_manage_roles_and_permissions: The can_manage_roles_and_permissions of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_manage_roles_and_permissions = can_manage_roles_and_permissions
 
     @property
     def can_manage_room_details(self):

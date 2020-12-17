@@ -40,7 +40,7 @@ class UsersApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_user_to_office(self, user_id, designated_office, account_id, **kwargs):
+    def add_user_to_office(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated office.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,25 +49,25 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_user_to_office(user_id, designated_office, account_id, callback=callback_function)
+        >>> thread = api.add_user_to_office(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedOffice designated_office:  (required)
         :param str account_id: (required)
+        :param DesignatedOffice body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.add_user_to_office_with_http_info(user_id, designated_office, account_id, **kwargs)
+            return self.add_user_to_office_with_http_info(user_id, account_id, **kwargs)
         else:
-            (data) = self.add_user_to_office_with_http_info(user_id, designated_office, account_id, **kwargs)
+            (data) = self.add_user_to_office_with_http_info(user_id, account_id, **kwargs)
             return data
 
-    def add_user_to_office_with_http_info(self, user_id, designated_office, account_id, **kwargs):
+    def add_user_to_office_with_http_info(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated office.
         This method makes a synchronous HTTP request by default. To make an
@@ -76,19 +76,19 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_user_to_office_with_http_info(user_id, designated_office, account_id, callback=callback_function)
+        >>> thread = api.add_user_to_office_with_http_info(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedOffice designated_office:  (required)
         :param str account_id: (required)
+        :param DesignatedOffice body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'designated_office', 'account_id']
+        all_params = ['user_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -106,9 +106,6 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `add_user_to_office`")
-        # verify the required parameter 'designated_office' is set
-        if ('designated_office' not in params) or (params['designated_office'] is None):
-            raise ValueError("Missing the required parameter `designated_office` when calling `add_user_to_office`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `add_user_to_office`")
@@ -131,15 +128,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'designated_office' in params:
-            body_params = params['designated_office']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -159,7 +156,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def add_user_to_region(self, user_id, designated_region, account_id, **kwargs):
+    def add_user_to_region(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated region.
         This method makes a synchronous HTTP request by default. To make an
@@ -168,25 +165,25 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_user_to_region(user_id, designated_region, account_id, callback=callback_function)
+        >>> thread = api.add_user_to_region(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedRegion designated_region:  (required)
         :param str account_id: (required)
+        :param DesignatedRegion body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.add_user_to_region_with_http_info(user_id, designated_region, account_id, **kwargs)
+            return self.add_user_to_region_with_http_info(user_id, account_id, **kwargs)
         else:
-            (data) = self.add_user_to_region_with_http_info(user_id, designated_region, account_id, **kwargs)
+            (data) = self.add_user_to_region_with_http_info(user_id, account_id, **kwargs)
             return data
 
-    def add_user_to_region_with_http_info(self, user_id, designated_region, account_id, **kwargs):
+    def add_user_to_region_with_http_info(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated region.
         This method makes a synchronous HTTP request by default. To make an
@@ -195,19 +192,19 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_user_to_region_with_http_info(user_id, designated_region, account_id, callback=callback_function)
+        >>> thread = api.add_user_to_region_with_http_info(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedRegion designated_region:  (required)
         :param str account_id: (required)
+        :param DesignatedRegion body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'designated_region', 'account_id']
+        all_params = ['user_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -225,9 +222,6 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `add_user_to_region`")
-        # verify the required parameter 'designated_region' is set
-        if ('designated_region' not in params) or (params['designated_region'] is None):
-            raise ValueError("Missing the required parameter `designated_region` when calling `add_user_to_region`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `add_user_to_region`")
@@ -250,15 +244,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'designated_region' in params:
-            body_params = params['designated_region']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -366,7 +360,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -388,7 +382,7 @@ class UsersApi(object):
 
     def get_users(self, account_id, **kwargs):
         """
-        Gets a paged-list of users.
+        Gets a paged-list of 
         Retrieves a paged-list of Company Users in the User's company using the given filter and sort parameters.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -424,7 +418,7 @@ class UsersApi(object):
 
     def get_users_with_http_info(self, account_id, **kwargs):
         """
-        Gets a paged-list of users.
+        Gets a paged-list of 
         Retrieves a paged-list of Company Users in the User's company using the given filter and sort parameters.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -509,7 +503,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -529,7 +523,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def invite_classic_admin(self, invitee, account_id, **kwargs):
+    def invite_classic_admin(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
         This method makes a synchronous HTTP request by default. To make an
@@ -538,24 +532,24 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_classic_admin(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_classic_admin(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ClassicAdminToInvite invitee: Invitee information. (required)
         :param str account_id: (required)
+        :param ClassicAdminToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.invite_classic_admin_with_http_info(invitee, account_id, **kwargs)
+            return self.invite_classic_admin_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.invite_classic_admin_with_http_info(invitee, account_id, **kwargs)
+            (data) = self.invite_classic_admin_with_http_info(account_id, **kwargs)
             return data
 
-    def invite_classic_admin_with_http_info(self, invitee, account_id, **kwargs):
+    def invite_classic_admin_with_http_info(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
         This method makes a synchronous HTTP request by default. To make an
@@ -564,18 +558,18 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_classic_admin_with_http_info(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_classic_admin_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ClassicAdminToInvite invitee: Invitee information. (required)
         :param str account_id: (required)
+        :param ClassicAdminToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invitee', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -590,9 +584,6 @@ class UsersApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'invitee' is set
-        if ('invitee' not in params) or (params['invitee'] is None):
-            raise ValueError("Missing the required parameter `invitee` when calling `invite_classic_admin`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `invite_classic_admin`")
@@ -613,15 +604,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'invitee' in params:
-            body_params = params['invitee']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -641,7 +632,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def invite_classic_agent(self, invitee, account_id, **kwargs):
+    def invite_classic_agent(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
         This method makes a synchronous HTTP request by default. To make an
@@ -650,24 +641,24 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_classic_agent(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_classic_agent(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ClassicAgentToInvite invitee: Invitee information. (required)
         :param str account_id: (required)
+        :param ClassicAgentToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.invite_classic_agent_with_http_info(invitee, account_id, **kwargs)
+            return self.invite_classic_agent_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.invite_classic_agent_with_http_info(invitee, account_id, **kwargs)
+            (data) = self.invite_classic_agent_with_http_info(account_id, **kwargs)
             return data
 
-    def invite_classic_agent_with_http_info(self, invitee, account_id, **kwargs):
+    def invite_classic_agent_with_http_info(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
         This method makes a synchronous HTTP request by default. To make an
@@ -676,18 +667,18 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_classic_agent_with_http_info(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_classic_agent_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ClassicAgentToInvite invitee: Invitee information. (required)
         :param str account_id: (required)
+        :param ClassicAgentToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invitee', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -702,9 +693,6 @@ class UsersApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'invitee' is set
-        if ('invitee' not in params) or (params['invitee'] is None):
-            raise ValueError("Missing the required parameter `invitee` when calling `invite_classic_agent`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `invite_classic_agent`")
@@ -725,15 +713,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'invitee' in params:
-            body_params = params['invitee']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -753,7 +741,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def invite_classic_manager(self, invitee, account_id, **kwargs):
+    def invite_classic_manager(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
         This method makes a synchronous HTTP request by default. To make an
@@ -762,24 +750,24 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_classic_manager(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_classic_manager(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ClassicManagerToInvite invitee: Invitee information. (required)
         :param str account_id: (required)
+        :param ClassicManagerToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.invite_classic_manager_with_http_info(invitee, account_id, **kwargs)
+            return self.invite_classic_manager_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.invite_classic_manager_with_http_info(invitee, account_id, **kwargs)
+            (data) = self.invite_classic_manager_with_http_info(account_id, **kwargs)
             return data
 
-    def invite_classic_manager_with_http_info(self, invitee, account_id, **kwargs):
+    def invite_classic_manager_with_http_info(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
         This method makes a synchronous HTTP request by default. To make an
@@ -788,18 +776,18 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_classic_manager_with_http_info(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_classic_manager_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ClassicManagerToInvite invitee: Invitee information. (required)
         :param str account_id: (required)
+        :param ClassicManagerToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invitee', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -814,9 +802,6 @@ class UsersApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'invitee' is set
-        if ('invitee' not in params) or (params['invitee'] is None):
-            raise ValueError("Missing the required parameter `invitee` when calling `invite_classic_manager`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `invite_classic_manager`")
@@ -837,15 +822,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'invitee' in params:
-            body_params = params['invitee']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -865,7 +850,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def invite_user(self, invitee, account_id, **kwargs):
+    def invite_user(self, account_id, **kwargs):
         """
         NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
         This method makes a synchronous HTTP request by default. To make an
@@ -874,24 +859,24 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_user(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_user(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UserToInvite invitee: Invitee information (required)
         :param str account_id: (required)
+        :param UserToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.invite_user_with_http_info(invitee, account_id, **kwargs)
+            return self.invite_user_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.invite_user_with_http_info(invitee, account_id, **kwargs)
+            (data) = self.invite_user_with_http_info(account_id, **kwargs)
             return data
 
-    def invite_user_with_http_info(self, invitee, account_id, **kwargs):
+    def invite_user_with_http_info(self, account_id, **kwargs):
         """
         NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
         This method makes a synchronous HTTP request by default. To make an
@@ -900,18 +885,18 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.invite_user_with_http_info(invitee, account_id, callback=callback_function)
+        >>> thread = api.invite_user_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UserToInvite invitee: Invitee information (required)
         :param str account_id: (required)
+        :param UserToInvite body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invitee', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -926,9 +911,6 @@ class UsersApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'invitee' is set
-        if ('invitee' not in params) or (params['invitee'] is None):
-            raise ValueError("Missing the required parameter `invitee` when calling `invite_user`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `invite_user`")
@@ -949,15 +931,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'invitee' in params:
-            body_params = params['invitee']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -977,7 +959,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def lock_user(self, user_id, details, account_id, **kwargs):
+    def lock_user(self, user_id, account_id, **kwargs):
         """
         Locks the account of the user.
         This method makes a synchronous HTTP request by default. To make an
@@ -986,25 +968,25 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.lock_user(user_id, details, account_id, callback=callback_function)
+        >>> thread = api.lock_user(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be locked. (required)
-        :param LockedOutDetails details: Details containing the reason the user is being locked out (required)
         :param str account_id: (required)
+        :param LockedOutDetails body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.lock_user_with_http_info(user_id, details, account_id, **kwargs)
+            return self.lock_user_with_http_info(user_id, account_id, **kwargs)
         else:
-            (data) = self.lock_user_with_http_info(user_id, details, account_id, **kwargs)
+            (data) = self.lock_user_with_http_info(user_id, account_id, **kwargs)
             return data
 
-    def lock_user_with_http_info(self, user_id, details, account_id, **kwargs):
+    def lock_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Locks the account of the user.
         This method makes a synchronous HTTP request by default. To make an
@@ -1013,19 +995,19 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.lock_user_with_http_info(user_id, details, account_id, callback=callback_function)
+        >>> thread = api.lock_user_with_http_info(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be locked. (required)
-        :param LockedOutDetails details: Details containing the reason the user is being locked out (required)
         :param str account_id: (required)
+        :param LockedOutDetails body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'details', 'account_id']
+        all_params = ['user_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1043,9 +1025,6 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `lock_user`")
-        # verify the required parameter 'details' is set
-        if ('details' not in params) or (params['details'] is None):
-            raise ValueError("Missing the required parameter `details` when calling `lock_user`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `lock_user`")
@@ -1068,15 +1047,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'details' in params:
-            body_params = params['details']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -1184,7 +1163,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -1294,7 +1273,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -1314,7 +1293,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def remove_user_from_office(self, user_id, designated_office, account_id, **kwargs):
+    def remove_user_from_office(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated office.
         This method makes a synchronous HTTP request by default. To make an
@@ -1323,25 +1302,25 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.remove_user_from_office(user_id, designated_office, account_id, callback=callback_function)
+        >>> thread = api.remove_user_from_office(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedOffice designated_office:  (required)
         :param str account_id: (required)
+        :param DesignatedOffice body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.remove_user_from_office_with_http_info(user_id, designated_office, account_id, **kwargs)
+            return self.remove_user_from_office_with_http_info(user_id, account_id, **kwargs)
         else:
-            (data) = self.remove_user_from_office_with_http_info(user_id, designated_office, account_id, **kwargs)
+            (data) = self.remove_user_from_office_with_http_info(user_id, account_id, **kwargs)
             return data
 
-    def remove_user_from_office_with_http_info(self, user_id, designated_office, account_id, **kwargs):
+    def remove_user_from_office_with_http_info(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated office.
         This method makes a synchronous HTTP request by default. To make an
@@ -1350,19 +1329,19 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.remove_user_from_office_with_http_info(user_id, designated_office, account_id, callback=callback_function)
+        >>> thread = api.remove_user_from_office_with_http_info(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedOffice designated_office:  (required)
         :param str account_id: (required)
+        :param DesignatedOffice body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'designated_office', 'account_id']
+        all_params = ['user_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1380,9 +1359,6 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `remove_user_from_office`")
-        # verify the required parameter 'designated_office' is set
-        if ('designated_office' not in params) or (params['designated_office'] is None):
-            raise ValueError("Missing the required parameter `designated_office` when calling `remove_user_from_office`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `remove_user_from_office`")
@@ -1405,15 +1381,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'designated_office' in params:
-            body_params = params['designated_office']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -1433,7 +1409,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def remove_user_from_region(self, user_id, designated_region, account_id, **kwargs):
+    def remove_user_from_region(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated region.
         This method makes a synchronous HTTP request by default. To make an
@@ -1442,25 +1418,25 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.remove_user_from_region(user_id, designated_region, account_id, callback=callback_function)
+        >>> thread = api.remove_user_from_region(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedRegion designated_region:  (required)
         :param str account_id: (required)
+        :param DesignatedRegion body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.remove_user_from_region_with_http_info(user_id, designated_region, account_id, **kwargs)
+            return self.remove_user_from_region_with_http_info(user_id, account_id, **kwargs)
         else:
-            (data) = self.remove_user_from_region_with_http_info(user_id, designated_region, account_id, **kwargs)
+            (data) = self.remove_user_from_region_with_http_info(user_id, account_id, **kwargs)
             return data
 
-    def remove_user_from_region_with_http_info(self, user_id, designated_region, account_id, **kwargs):
+    def remove_user_from_region_with_http_info(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated region.
         This method makes a synchronous HTTP request by default. To make an
@@ -1469,19 +1445,19 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.remove_user_from_region_with_http_info(user_id, designated_region, account_id, callback=callback_function)
+        >>> thread = api.remove_user_from_region_with_http_info(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param DesignatedRegion designated_region:  (required)
         :param str account_id: (required)
+        :param DesignatedRegion body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'designated_region', 'account_id']
+        all_params = ['user_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1499,9 +1475,6 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `remove_user_from_region`")
-        # verify the required parameter 'designated_region' is set
-        if ('designated_region' not in params) or (params['designated_region'] is None):
-            raise ValueError("Missing the required parameter `designated_region` when calling `remove_user_from_region`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `remove_user_from_region`")
@@ -1524,15 +1497,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'designated_region' in params:
-            body_params = params['designated_region']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -1640,7 +1613,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -1660,7 +1633,7 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_user(self, user_id, user_for_update, account_id, **kwargs):
+    def update_user(self, user_id, account_id, **kwargs):
         """
         Updates user information
         This method makes a synchronous HTTP request by default. To make an
@@ -1669,25 +1642,25 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_user(user_id, user_for_update, account_id, callback=callback_function)
+        >>> thread = api.update_user(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param UserForUpdate user_for_update:  (required)
         :param str account_id: (required)
+        :param UserForUpdate body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_user_with_http_info(user_id, user_for_update, account_id, **kwargs)
+            return self.update_user_with_http_info(user_id, account_id, **kwargs)
         else:
-            (data) = self.update_user_with_http_info(user_id, user_for_update, account_id, **kwargs)
+            (data) = self.update_user_with_http_info(user_id, account_id, **kwargs)
             return data
 
-    def update_user_with_http_info(self, user_id, user_for_update, account_id, **kwargs):
+    def update_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Updates user information
         This method makes a synchronous HTTP request by default. To make an
@@ -1696,19 +1669,19 @@ class UsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_user_with_http_info(user_id, user_for_update, account_id, callback=callback_function)
+        >>> thread = api.update_user_with_http_info(user_id, account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param UserForUpdate user_for_update:  (required)
         :param str account_id: (required)
+        :param UserForUpdate body:
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'user_for_update', 'account_id']
+        all_params = ['user_id', 'account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1726,9 +1699,6 @@ class UsersApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `update_user`")
-        # verify the required parameter 'user_for_update' is set
-        if ('user_for_update' not in params) or (params['user_for_update'] is None):
-            raise ValueError("Missing the required parameter `user_for_update` when calling `update_user`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `update_user`")
@@ -1751,15 +1721,15 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'user_for_update' in params:
-            body_params = params['user_for_update']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

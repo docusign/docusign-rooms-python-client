@@ -40,7 +40,7 @@ class OfficesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_office(self, office, account_id, **kwargs):
+    def create_office(self, account_id, **kwargs):
         """
         Create an office.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,24 +49,24 @@ class OfficesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_office(office, account_id, callback=callback_function)
+        >>> thread = api.create_office(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OfficeForCreate office:  (required)
         :param str account_id: (required)
+        :param OfficeForCreate body:
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_office_with_http_info(office, account_id, **kwargs)
+            return self.create_office_with_http_info(account_id, **kwargs)
         else:
-            (data) = self.create_office_with_http_info(office, account_id, **kwargs)
+            (data) = self.create_office_with_http_info(account_id, **kwargs)
             return data
 
-    def create_office_with_http_info(self, office, account_id, **kwargs):
+    def create_office_with_http_info(self, account_id, **kwargs):
         """
         Create an office.
         This method makes a synchronous HTTP request by default. To make an
@@ -75,18 +75,18 @@ class OfficesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_office_with_http_info(office, account_id, callback=callback_function)
+        >>> thread = api.create_office_with_http_info(account_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OfficeForCreate office:  (required)
         :param str account_id: (required)
+        :param OfficeForCreate body:
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office', 'account_id']
+        all_params = ['account_id', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -101,9 +101,6 @@ class OfficesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'office' is set
-        if ('office' not in params) or (params['office'] is None):
-            raise ValueError("Missing the required parameter `office` when calling `create_office`")
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params) or (params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_office`")
@@ -124,15 +121,15 @@ class OfficesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'office' in params:
-            body_params = params['office']
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -240,7 +237,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -348,7 +345,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -370,7 +367,7 @@ class OfficesApi(object):
 
     def get_offices(self, account_id, **kwargs):
         """
-        Get all offices.
+        Get all 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -399,7 +396,7 @@ class OfficesApi(object):
 
     def get_offices_with_http_info(self, account_id, **kwargs):
         """
-        Get all offices.
+        Get all 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -465,7 +462,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
@@ -573,7 +570,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json'])
 
         # Authentication setting
         auth_settings = []
