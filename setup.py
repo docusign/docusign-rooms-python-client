@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages, os, Command  # noqa: H301
 
 NAME = "docusign-rooms"
-VERSION = "1.1.0rc1"
+VERSION = "1.1.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -28,7 +28,7 @@ REQUIRES = [
     "six>=1.10",
     "urllib3>=1.23",
     "setuptools >= 21.0.0",
-    "PyJWT>=1.7.1",
+    "PyJWT>=1.7.1,<2",
     "cryptography>=2.5",
     "nose>=1.3.7"
 ]
