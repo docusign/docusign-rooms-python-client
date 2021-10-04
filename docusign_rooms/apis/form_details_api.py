@@ -43,6 +43,7 @@ class FormDetailsApi(object):
     def get_form_details(self, form_id, account_id, **kwargs):
         """
         Gets form based on Id.
+        Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -54,7 +55,7 @@ class FormDetailsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FormDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -69,6 +70,7 @@ class FormDetailsApi(object):
     def get_form_details_with_http_info(self, form_id, account_id, **kwargs):
         """
         Gets form based on Id.
+        Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,7 +82,7 @@ class FormDetailsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FormDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -129,6 +131,10 @@ class FormDetailsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

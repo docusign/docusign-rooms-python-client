@@ -43,6 +43,7 @@ class FormLibrariesApi(object):
     def get_form_libraries(self, account_id, **kwargs):
         """
         Gets a paged list of forms libraries.
+        Returns a list of form libraries to which the current user has access.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,7 +54,7 @@ class FormLibrariesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Default value is 100 and max value is 100
         :param int start_position: Default value is 0
         :return: FormLibrarySummaryList
@@ -70,6 +71,7 @@ class FormLibrariesApi(object):
     def get_form_libraries_with_http_info(self, account_id, **kwargs):
         """
         Gets a paged list of forms libraries.
+        Returns a list of form libraries to which the current user has access.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,7 +82,7 @@ class FormLibrariesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Default value is 100 and max value is 100
         :param int start_position: Default value is 0
         :return: FormLibrarySummaryList
@@ -131,6 +133,10 @@ class FormLibrariesApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -152,6 +158,7 @@ class FormLibrariesApi(object):
     def get_form_library_forms(self, form_library_id, account_id, **kwargs):
         """
         Gets a paged list of forms in a forms library.
+        Returns a list of forms  to which the current user has access in the specified form library.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -163,7 +170,7 @@ class FormLibrariesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_library_id: Library Id (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Default value is 100 and max value is 100
         :param int start_position: Default value is 0
         :return: FormSummaryList
@@ -180,6 +187,7 @@ class FormLibrariesApi(object):
     def get_form_library_forms_with_http_info(self, form_library_id, account_id, **kwargs):
         """
         Gets a paged list of forms in a forms library.
+        Returns a list of forms  to which the current user has access in the specified form library.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -191,7 +199,7 @@ class FormLibrariesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_library_id: Library Id (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Default value is 100 and max value is 100
         :param int start_position: Default value is 0
         :return: FormSummaryList
@@ -246,6 +254,10 @@ class FormLibrariesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

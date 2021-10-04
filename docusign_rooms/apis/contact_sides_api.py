@@ -43,6 +43,7 @@ class ContactSidesApi(object):
     def get_contact_sides(self, **kwargs):
         """
         Retrieves the list of valid contact sides.
+        Returns a list of valid contact sides.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -67,6 +68,7 @@ class ContactSidesApi(object):
     def get_contact_sides_with_http_info(self, **kwargs):
         """
         Retrieves the list of valid contact sides.
+        Returns a list of valid contact sides.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -114,6 +116,10 @@ class ContactSidesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

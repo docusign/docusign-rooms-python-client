@@ -43,6 +43,7 @@ class RoomFoldersApi(object):
     def get_room_folders(self, room_id, account_id, **kwargs):
         """
         Gets room folders accessible to the calling user.
+        Gets a list of room folders in the specified room that are accessible to the current user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -54,7 +55,7 @@ class RoomFoldersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: The room id from which to retrieve folders. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param int count: Number of room folders to return. Defaults to the maximum which is 100.
         :return: RoomFolderList
@@ -71,6 +72,7 @@ class RoomFoldersApi(object):
     def get_room_folders_with_http_info(self, room_id, account_id, **kwargs):
         """
         Gets room folders accessible to the calling user.
+        Gets a list of room folders in the specified room that are accessible to the current user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -82,7 +84,7 @@ class RoomFoldersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: The room id from which to retrieve folders. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param int count: Number of room folders to return. Defaults to the maximum which is 100.
         :return: RoomFolderList
@@ -137,6 +139,10 @@ class RoomFoldersApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

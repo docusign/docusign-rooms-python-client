@@ -43,6 +43,7 @@ class FieldsApi(object):
     def get_field_set(self, field_set_id, account_id, **kwargs):
         """
         Get details of a specific field set.
+        Get details of a specific field set.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,9 +54,9 @@ class FieldsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str field_set_id:  (required)
-        :param str account_id: (required)
-        :param list[str] fields_custom_data_filters: 
+        :param str field_set_id: The id of the field set. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param list[str] fields_custom_data_filters: A comma-separated list that limits the fields to return:\\n\\n- `IsRequiredOnCreate`: include fields that are required in room creation.\\n- `IsRequiredOnSubmit`: include fields that are required when submitting a room for review.\\n
         :return: FieldSet
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,6 +71,7 @@ class FieldsApi(object):
     def get_field_set_with_http_info(self, field_set_id, account_id, **kwargs):
         """
         Get details of a specific field set.
+        Get details of a specific field set.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,9 +82,9 @@ class FieldsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str field_set_id:  (required)
-        :param str account_id: (required)
-        :param list[str] fields_custom_data_filters: 
+        :param str field_set_id: The id of the field set. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param list[str] fields_custom_data_filters: A comma-separated list that limits the fields to return:\\n\\n- `IsRequiredOnCreate`: include fields that are required in room creation.\\n- `IsRequiredOnSubmit`: include fields that are required when submitting a room for review.\\n
         :return: FieldSet
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,6 +136,10 @@ class FieldsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

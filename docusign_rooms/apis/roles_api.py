@@ -43,6 +43,7 @@ class RolesApi(object):
     def create_role(self, account_id, **kwargs):
         """
         Creates a role.
+        Creates a new company role in Rooms
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,8 +54,8 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param RoleForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoleForCreate body: 
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -69,6 +70,7 @@ class RolesApi(object):
     def create_role_with_http_info(self, account_id, **kwargs):
         """
         Creates a role.
+        Creates a new company role in Rooms
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -79,8 +81,8 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param RoleForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoleForCreate body: 
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,6 +154,7 @@ class RolesApi(object):
     def delete_role(self, role_id, account_id, **kwargs):
         """
         Deletes the role with the given roleId.
+        Deletes a role from a company account in Rooms
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -162,8 +165,8 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int role_id:  (required)
-        :param str account_id: (required)
+        :param int role_id: The id of the role. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -178,6 +181,7 @@ class RolesApi(object):
     def delete_role_with_http_info(self, role_id, account_id, **kwargs):
         """
         Deletes the role with the given roleId.
+        Deletes a role from a company account in Rooms
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -188,8 +192,8 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int role_id:  (required)
-        :param str account_id: (required)
+        :param int role_id: The id of the role. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -239,6 +243,10 @@ class RolesApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -260,6 +268,7 @@ class RolesApi(object):
     def get_role(self, role_id, account_id, **kwargs):
         """
         Get information about the role with the given roleId.
+        Get information about the role with the given roleId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -270,9 +279,9 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int role_id:  (required)
-        :param str account_id: (required)
-        :param bool include_is_assigned: 
+        :param int role_id: The id of the role. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param bool include_is_assigned: When set to true, the response includes the `isAssigned` property, which specifies whether the role is currently assigned to any users. The default is false.
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -287,6 +296,7 @@ class RolesApi(object):
     def get_role_with_http_info(self, role_id, account_id, **kwargs):
         """
         Get information about the role with the given roleId.
+        Get information about the role with the given roleId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -297,9 +307,9 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int role_id:  (required)
-        :param str account_id: (required)
-        :param bool include_is_assigned: 
+        :param int role_id: The id of the role. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param bool include_is_assigned: When set to true, the response includes the `isAssigned` property, which specifies whether the role is currently assigned to any users. The default is false.
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -351,6 +361,10 @@ class RolesApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -372,6 +386,7 @@ class RolesApi(object):
     def get_roles(self, account_id, **kwargs):
         """
         Gets a paged-list of roles in your company
+        Returns a list of roles associated with a company account
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -382,11 +397,12 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param bool only_assignable: 
-        :param str filter: 
-        :param int start_position: 
-        :param int count: 
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param bool only_assignable: Returns assignable roles based on calling user's company permissions.               DEPRECATED: Please use filterContext parameter to get the assignable roles. AssignableRolesBasedOnCompanyPermissions returns same results as onlyAssignable=true
+        :param str filter_context: Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions
+        :param str filter: A search filter that returns roles by the beginning of the role name. You can enter the beginning of the role name only to return all of the roles that begin with the text that you entered.
+        :param int start_position: The starting zero-based index position of the result set. The default value is 0.
+        :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
         :return: RoleSummaryList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -401,6 +417,7 @@ class RolesApi(object):
     def get_roles_with_http_info(self, account_id, **kwargs):
         """
         Gets a paged-list of roles in your company
+        Returns a list of roles associated with a company account
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -411,17 +428,18 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param bool only_assignable: 
-        :param str filter: 
-        :param int start_position: 
-        :param int count: 
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param bool only_assignable: Returns assignable roles based on calling user's company permissions.               DEPRECATED: Please use filterContext parameter to get the assignable roles. AssignableRolesBasedOnCompanyPermissions returns same results as onlyAssignable=true
+        :param str filter_context: Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions
+        :param str filter: A search filter that returns roles by the beginning of the role name. You can enter the beginning of the role name only to return all of the roles that begin with the text that you entered.
+        :param int start_position: The starting zero-based index position of the result set. The default value is 0.
+        :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
         :return: RoleSummaryList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'only_assignable', 'filter', 'start_position', 'count']
+        all_params = ['account_id', 'only_assignable', 'filter_context', 'filter', 'start_position', 'count']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -451,6 +469,8 @@ class RolesApi(object):
         query_params = {}
         if 'only_assignable' in params:
             query_params['onlyAssignable'] = params['only_assignable']
+        if 'filter_context' in params:
+            query_params['filterContext'] = params['filter_context']
         if 'filter' in params:
             query_params['filter'] = params['filter']
         if 'start_position' in params:
@@ -467,6 +487,10 @@ class RolesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -489,6 +513,7 @@ class RolesApi(object):
     def update_role(self, role_id, account_id, **kwargs):
         """
         Updates the role with the given roleId.
+        Updates the role with the given roleId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -499,9 +524,9 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int role_id:  (required)
-        :param str account_id: (required)
-        :param RoleForUpdate body:
+        :param int role_id: The id of the role. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoleForUpdate body: 
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -516,6 +541,7 @@ class RolesApi(object):
     def update_role_with_http_info(self, role_id, account_id, **kwargs):
         """
         Updates the role with the given roleId.
+        Updates the role with the given roleId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -526,9 +552,9 @@ class RolesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int role_id:  (required)
-        :param str account_id: (required)
-        :param RoleForUpdate body:
+        :param int role_id: The id of the role. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoleForUpdate body: 
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.

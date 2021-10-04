@@ -43,6 +43,7 @@ class UsersApi(object):
     def add_user_to_office(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated office.
+        Adds the user to the designated office.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,9 +54,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedOffice body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedOffice body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,6 +71,7 @@ class UsersApi(object):
     def add_user_to_office_with_http_info(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated office.
+        Adds the user to the designated office.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,9 +82,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedOffice body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedOffice body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -159,6 +161,7 @@ class UsersApi(object):
     def add_user_to_region(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated region.
+        Adds the user to the designated region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -169,9 +172,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedRegion body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedRegion body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -186,6 +189,7 @@ class UsersApi(object):
     def add_user_to_region_with_http_info(self, user_id, account_id, **kwargs):
         """
         Adds the user to the designated region.
+        Adds the user to the designated region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -196,9 +200,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedRegion body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedRegion body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -275,6 +279,7 @@ class UsersApi(object):
     def get_user(self, user_id, account_id, **kwargs):
         """
         Retrieves user information for the user having the given UserId.
+        Retrieves user information for the user having the given UserId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -285,8 +290,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -301,6 +306,7 @@ class UsersApi(object):
     def get_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Retrieves user information for the user having the given UserId.
+        Retrieves user information for the user having the given UserId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -311,8 +317,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -362,6 +368,10 @@ class UsersApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -382,7 +392,7 @@ class UsersApi(object):
 
     def get_users(self, account_id, **kwargs):
         """
-        Gets a paged-list of 
+        Gets a paged-list of users.
         Retrieves a paged-list of Company Users in the User's company using the given filter and sort parameters.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -394,7 +404,7 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param str filter: Filters by name and email
         :param str sort: Valid values are 'FirstNameAsc', 'FirstNameDesc', 'LastNameAsc', 'LastNameDesc', 'EmailAsc', 'EmailDesc'
         :param int default_office_id: 
@@ -402,7 +412,7 @@ class UsersApi(object):
         :param int title_id: Only valid for classic companies
         :param int role_id: Only valid for next gen companies
         :param str status: Valid values are 'Active', 'Pending'
-        :param bool locked_only: 
+        :param bool locked_only: When set to true, filters for users whose accounts are locked
         :param int start_position: Defaults to 0
         :param int count: Defaults to 100. Must be less than or equal to 100
         :return: UserSummaryList
@@ -418,7 +428,7 @@ class UsersApi(object):
 
     def get_users_with_http_info(self, account_id, **kwargs):
         """
-        Gets a paged-list of 
+        Gets a paged-list of users.
         Retrieves a paged-list of Company Users in the User's company using the given filter and sort parameters.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -430,7 +440,7 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param str filter: Filters by name and email
         :param str sort: Valid values are 'FirstNameAsc', 'FirstNameDesc', 'LastNameAsc', 'LastNameDesc', 'EmailAsc', 'EmailDesc'
         :param int default_office_id: 
@@ -438,7 +448,7 @@ class UsersApi(object):
         :param int title_id: Only valid for classic companies
         :param int role_id: Only valid for next gen companies
         :param str status: Valid values are 'Active', 'Pending'
-        :param bool locked_only: 
+        :param bool locked_only: When set to true, filters for users whose accounts are locked
         :param int start_position: Defaults to 0
         :param int count: Defaults to 100. Must be less than or equal to 100
         :return: UserSummaryList
@@ -505,6 +515,10 @@ class UsersApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -526,6 +540,7 @@ class UsersApi(object):
     def invite_classic_admin(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
+        Invites a new user to join a company account on Rooms Version 5 as an Admin.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -536,8 +551,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClassicAdminToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param ClassicAdminToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -552,6 +567,7 @@ class UsersApi(object):
     def invite_classic_admin_with_http_info(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
+        Invites a new user to join a company account on Rooms Version 5 as an Admin.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -562,8 +578,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClassicAdminToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param ClassicAdminToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -635,6 +651,7 @@ class UsersApi(object):
     def invite_classic_agent(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
+        Invites a new user to join a company account on Rooms Version 5 as an Agent.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -645,8 +662,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClassicAgentToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param ClassicAgentToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -661,6 +678,7 @@ class UsersApi(object):
     def invite_classic_agent_with_http_info(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
+        Invites a new user to join a company account on Rooms Version 5 as an Agent.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -671,8 +689,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClassicAgentToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param ClassicAgentToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -744,6 +762,7 @@ class UsersApi(object):
     def invite_classic_manager(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
+        Invites a new user to join a company account on Rooms Version 5 as a Manager.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -754,8 +773,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClassicManagerToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param ClassicManagerToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -770,6 +789,7 @@ class UsersApi(object):
     def invite_classic_manager_with_http_info(self, account_id, **kwargs):
         """
         CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
+        Invites a new user to join a company account on Rooms Version 5 as a Manager.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -780,8 +800,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClassicManagerToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param ClassicManagerToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -853,6 +873,7 @@ class UsersApi(object):
     def invite_user(self, account_id, **kwargs):
         """
         NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
+        Invites a new user to join a company account on Rooms Version 6.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -863,8 +884,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param UserToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param UserToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -879,6 +900,7 @@ class UsersApi(object):
     def invite_user_with_http_info(self, account_id, **kwargs):
         """
         NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
+        Invites a new user to join a company account on Rooms Version 6.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -889,8 +911,8 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param UserToInvite body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param UserToInvite body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -962,6 +984,7 @@ class UsersApi(object):
     def lock_user(self, user_id, account_id, **kwargs):
         """
         Locks the account of the user.
+        Locks the account of the user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -973,8 +996,8 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be locked. (required)
-        :param str account_id: (required)
-        :param LockedOutDetails body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param LockedOutDetails body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -989,6 +1012,7 @@ class UsersApi(object):
     def lock_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Locks the account of the user.
+        Locks the account of the user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1000,8 +1024,8 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be locked. (required)
-        :param str account_id: (required)
-        :param LockedOutDetails body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param LockedOutDetails body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1078,6 +1102,7 @@ class UsersApi(object):
     def reinvite_user(self, user_id, account_id, **kwargs):
         """
         Reinvites the pending user with the given userId.
+        Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1089,7 +1114,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1104,6 +1129,7 @@ class UsersApi(object):
     def reinvite_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Reinvites the pending user with the given userId.
+        Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1115,7 +1141,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id:  (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1165,6 +1191,10 @@ class UsersApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1198,7 +1228,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: Id of the user you wish to remove. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1225,7 +1255,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: Id of the user you wish to remove. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1275,6 +1305,10 @@ class UsersApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1296,6 +1330,7 @@ class UsersApi(object):
     def remove_user_from_office(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated office.
+        Removes the user from the designated office.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1306,9 +1341,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedOffice body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedOffice body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1323,6 +1358,7 @@ class UsersApi(object):
     def remove_user_from_office_with_http_info(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated office.
+        Removes the user from the designated office.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1333,9 +1369,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedOffice body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedOffice body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1412,6 +1448,7 @@ class UsersApi(object):
     def remove_user_from_region(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated region.
+        Removes the user from the designated region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1422,9 +1459,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedRegion body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedRegion body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1439,6 +1476,7 @@ class UsersApi(object):
     def remove_user_from_region_with_http_info(self, user_id, account_id, **kwargs):
         """
         Removes the user from the designated region.
+        Removes the user from the designated region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1449,9 +1487,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param DesignatedRegion body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DesignatedRegion body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1528,6 +1566,7 @@ class UsersApi(object):
     def unlock_user(self, user_id, account_id, **kwargs):
         """
         Unlocks the account of the user.
+        Unlocks the account of the user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1539,7 +1578,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be unlocked. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1554,6 +1593,7 @@ class UsersApi(object):
     def unlock_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Unlocks the account of the user.
+        Unlocks the account of the user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1565,7 +1605,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be unlocked. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1615,6 +1655,10 @@ class UsersApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1636,6 +1680,7 @@ class UsersApi(object):
     def update_user(self, user_id, account_id, **kwargs):
         """
         Updates user information
+        Updates user information
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1646,9 +1691,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param UserForUpdate body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param UserForUpdate body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1663,6 +1708,7 @@ class UsersApi(object):
     def update_user_with_http_info(self, user_id, account_id, **kwargs):
         """
         Updates user information
+        Updates user information
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1673,9 +1719,9 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
-        :param str account_id: (required)
-        :param UserForUpdate body:
+        :param int user_id: The id of the user. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param UserForUpdate body: 
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.

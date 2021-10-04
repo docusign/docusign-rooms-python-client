@@ -43,6 +43,7 @@ class ESignPermissionProfilesApi(object):
     def get_e_sign_permission_profiles(self, account_id, **kwargs):
         """
         Gets permission profiles from the associated eSign account.
+        When you create or invite a new member in Rooms, the system creates an eSignature account for the member at the same time. This method returns a list of the eSignature permission profiles that the current user may be able to assign to a new member. The current user may not assign a permission higher than their own permission.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,7 +54,7 @@ class ESignPermissionProfilesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: ESignPermissionProfileList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -68,6 +69,7 @@ class ESignPermissionProfilesApi(object):
     def get_e_sign_permission_profiles_with_http_info(self, account_id, **kwargs):
         """
         Gets permission profiles from the associated eSign account.
+        When you create or invite a new member in Rooms, the system creates an eSignature account for the member at the same time. This method returns a list of the eSignature permission profiles that the current user may be able to assign to a new member. The current user may not assign a permission higher than their own permission.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -78,7 +80,7 @@ class ESignPermissionProfilesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: ESignPermissionProfileList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -122,6 +124,10 @@ class ESignPermissionProfilesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

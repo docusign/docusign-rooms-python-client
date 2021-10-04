@@ -43,6 +43,7 @@ class DocumentsApi(object):
     def create_document_user(self, document_id, account_id, **kwargs):
         """
         Grants access to a document for a user.
+        Grants a user access to a document. You specify the user's `userId` in the request body. The response is an object that specifies the access the user has.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,9 +54,9 @@ class DocumentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int document_id:  (required)
-        :param str account_id: (required)
-        :param DocumentUserForCreate body:
+        :param int document_id: The id of the document. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DocumentUserForCreate body: 
         :return: DocumentUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,6 +71,7 @@ class DocumentsApi(object):
     def create_document_user_with_http_info(self, document_id, account_id, **kwargs):
         """
         Grants access to a document for a user.
+        Grants a user access to a document. You specify the user's `userId` in the request body. The response is an object that specifies the access the user has.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,9 +82,9 @@ class DocumentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int document_id:  (required)
-        :param str account_id: (required)
-        :param DocumentUserForCreate body:
+        :param int document_id: The id of the document. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param DocumentUserForCreate body: 
         :return: DocumentUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -159,6 +161,7 @@ class DocumentsApi(object):
     def delete_document(self, document_id, account_id, **kwargs):
         """
         Deletes a document.
+        Permanently deletes a document. To find the `documentId` of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -169,8 +172,8 @@ class DocumentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int document_id:  (required)
-        :param str account_id: (required)
+        :param int document_id: The ID of the document. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -185,6 +188,7 @@ class DocumentsApi(object):
     def delete_document_with_http_info(self, document_id, account_id, **kwargs):
         """
         Deletes a document.
+        Permanently deletes a document. To find the `documentId` of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -195,8 +199,8 @@ class DocumentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int document_id:  (required)
-        :param str account_id: (required)
+        :param int document_id: The ID of the document. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -246,6 +250,10 @@ class DocumentsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -267,6 +275,7 @@ class DocumentsApi(object):
     def get_document(self, document_id, account_id, **kwargs):
         """
         Get information about the Document with the given DocumentId.
+        Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the `documentId` of the document that you want to retrieve, use the Rooms::GetDocuments method.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -277,9 +286,9 @@ class DocumentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int document_id:  (required)
-        :param str account_id: (required)
-        :param bool include_contents: 
+        :param int document_id: The id of the document. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param bool include_contents: When set to **true**, includes the contents of the document in the `base64Contents` property of the response. The default value is **false**.
         :return: Document
                  If the method is called asynchronously,
                  returns the request thread.
@@ -294,6 +303,7 @@ class DocumentsApi(object):
     def get_document_with_http_info(self, document_id, account_id, **kwargs):
         """
         Get information about the Document with the given DocumentId.
+        Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the `documentId` of the document that you want to retrieve, use the Rooms::GetDocuments method.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -304,9 +314,9 @@ class DocumentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int document_id:  (required)
-        :param str account_id: (required)
-        :param bool include_contents: 
+        :param int document_id: The id of the document. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param bool include_contents: When set to **true**, includes the contents of the document in the `base64Contents` property of the response. The default value is **false**.
         :return: Document
                  If the method is called asynchronously,
                  returns the request thread.
@@ -357,6 +367,10 @@ class DocumentsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

@@ -43,6 +43,7 @@ class RoomTemplatesApi(object):
     def get_room_templates(self, account_id, **kwargs):
         """
         Returns all room templates that the active user has access to
+        This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,8 +54,8 @@ class RoomTemplatesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level  If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level templates. If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
         :param bool only_assignable: Get list of templates you have access to. Default value false.
         :param bool only_enabled: When set to true, only returns room templates that are not disabled.
         :param int count: Number of room templates to return. Defaults to the maximum which is 100.
@@ -73,6 +74,7 @@ class RoomTemplatesApi(object):
     def get_room_templates_with_http_info(self, account_id, **kwargs):
         """
         Returns all room templates that the active user has access to
+        This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -83,8 +85,8 @@ class RoomTemplatesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level  If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param int office_id: Get all room templates you have access to for this office. Response includes Company and Region level templates. If onlyAssignable is true, and no officeId is provided, user's default office is assumed.
         :param bool only_assignable: Get list of templates you have access to. Default value false.
         :param bool only_enabled: When set to true, only returns room templates that are not disabled.
         :param int count: Number of room templates to return. Defaults to the maximum which is 100.
@@ -142,6 +144,10 @@ class RoomTemplatesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

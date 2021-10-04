@@ -42,7 +42,8 @@ class RoomsApi(object):
 
     def add_document_to_room(self, room_id, account_id, **kwargs):
         """
-        Add a document to a 
+        Add a document to a room.
+        Add a document to a room
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,9 +54,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
-        :param Document body:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param Document body: 
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -69,7 +70,8 @@ class RoomsApi(object):
 
     def add_document_to_room_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Add a document to a 
+        Add a document to a room.
+        Add a document to a room
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,9 +82,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
-        :param Document body:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param Document body: 
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -159,6 +161,7 @@ class RoomsApi(object):
     def add_document_to_room_via_file_upload(self, room_id, account_id, **kwargs):
         """
         Add a document to a room via file contents upload.
+        This method uploads the contents of file as a room document for the room that you specify.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -169,9 +172,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
-        :param file file:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param file file: 
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -186,6 +189,7 @@ class RoomsApi(object):
     def add_document_to_room_via_file_upload_with_http_info(self, room_id, account_id, **kwargs):
         """
         Add a document to a room via file contents upload.
+        This method uploads the contents of file as a room document for the room that you specify.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -196,9 +200,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
-        :param file file:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param file file: 
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -275,6 +279,7 @@ class RoomsApi(object):
     def add_form_to_room(self, room_id, account_id, **kwargs):
         """
         Adds a DocuSign Form to a room
+        Adds a form to a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -286,8 +291,8 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Id of the room to which the DocuSign Form is being added (required)
-        :param str account_id: (required)
-        :param FormForAdd body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormForAdd body: 
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -302,6 +307,7 @@ class RoomsApi(object):
     def add_form_to_room_with_http_info(self, room_id, account_id, **kwargs):
         """
         Adds a DocuSign Form to a room
+        Adds a form to a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -313,8 +319,8 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Id of the room to which the DocuSign Form is being added (required)
-        :param str account_id: (required)
-        :param FormForAdd body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormForAdd body: 
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -391,6 +397,7 @@ class RoomsApi(object):
     def create_room(self, account_id, **kwargs):
         """
         Creates a new Room
+        Creates a new Room
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -401,8 +408,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param RoomForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomForCreate body: 
         :return: Room
                  If the method is called asynchronously,
                  returns the request thread.
@@ -417,6 +424,7 @@ class RoomsApi(object):
     def create_room_with_http_info(self, account_id, **kwargs):
         """
         Creates a new Room
+        Creates a new Room
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -427,8 +435,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param RoomForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomForCreate body: 
         :return: Room
                  If the method is called asynchronously,
                  returns the request thread.
@@ -500,6 +508,7 @@ class RoomsApi(object):
     def delete_room(self, room_id, account_id, **kwargs):
         """
         Deletes the room having the given room ID.
+        Deletes the room having the given room ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -511,7 +520,7 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: ID of the room to be deleted. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -526,6 +535,7 @@ class RoomsApi(object):
     def delete_room_with_http_info(self, room_id, account_id, **kwargs):
         """
         Deletes the room having the given room ID.
+        Deletes the room having the given room ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -537,7 +547,7 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: ID of the room to be deleted. (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -587,6 +597,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -608,6 +622,7 @@ class RoomsApi(object):
     def get_assignable_roles(self, room_id, account_id, **kwargs):
         """
         Returns the roles for which the calling user, based on their role within the room, can assign to invitees.
+        This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -618,12 +633,12 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param str assignee_email: Optional parameter indicating to only return roles (internal/external) assignable to this user.
-        :param str filter: 
-        :param int start_position: 
-        :param int count: 
+        :param str filter: A search filter that returns assignable roles by the beginning of the role name.
+        :param int start_position: The index position within the total result set from which to start returning values. The default value is `0`.
+        :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
         :return: AssignableRoles
                  If the method is called asynchronously,
                  returns the request thread.
@@ -638,6 +653,7 @@ class RoomsApi(object):
     def get_assignable_roles_with_http_info(self, room_id, account_id, **kwargs):
         """
         Returns the roles for which the calling user, based on their role within the room, can assign to invitees.
+        This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -648,12 +664,12 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param str assignee_email: Optional parameter indicating to only return roles (internal/external) assignable to this user.
-        :param str filter: 
-        :param int start_position: 
-        :param int count: 
+        :param str filter: A search filter that returns assignable roles by the beginning of the role name.
+        :param int start_position: The index position within the total result set from which to start returning values. The default value is `0`.
+        :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
         :return: AssignableRoles
                  If the method is called asynchronously,
                  returns the request thread.
@@ -711,6 +727,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -732,6 +752,7 @@ class RoomsApi(object):
     def get_documents(self, room_id, account_id, **kwargs):
         """
         Get documents in the room accessible to the calling user.
+        This method returns a list of documents that the current user can access for a specific room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -742,10 +763,14 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of documents to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
+        :param bool require_content_for_dynamic_documents: Filter out any isDynamic documents without content. Defaults to false.
+        :param int room_folder_id: Filter documents by folderId. Defaults to null, to not filter on folderId.
+        :param str name_filter: Filter documents where Name contains the filter. Defaults to null, to not filter.
+        :param bool include_archived: Filter documents to have the same isArchived value as includeArchived. Defaults to true, to include archived documents.
         :return: RoomDocumentList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -760,6 +785,7 @@ class RoomsApi(object):
     def get_documents_with_http_info(self, room_id, account_id, **kwargs):
         """
         Get documents in the room accessible to the calling user.
+        This method returns a list of documents that the current user can access for a specific room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -770,16 +796,20 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of documents to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
+        :param bool require_content_for_dynamic_documents: Filter out any isDynamic documents without content. Defaults to false.
+        :param int room_folder_id: Filter documents by folderId. Defaults to null, to not filter on folderId.
+        :param str name_filter: Filter documents where Name contains the filter. Defaults to null, to not filter.
+        :param bool include_archived: Filter documents to have the same isArchived value as includeArchived. Defaults to true, to include archived documents.
         :return: RoomDocumentList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['room_id', 'account_id', 'count', 'start_position']
+        all_params = ['room_id', 'account_id', 'count', 'start_position', 'require_content_for_dynamic_documents', 'room_folder_id', 'name_filter', 'include_archived']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -816,6 +846,14 @@ class RoomsApi(object):
             query_params['count'] = params['count']
         if 'start_position' in params:
             query_params['startPosition'] = params['start_position']
+        if 'require_content_for_dynamic_documents' in params:
+            query_params['requireContentForDynamicDocuments'] = params['require_content_for_dynamic_documents']
+        if 'room_folder_id' in params:
+            query_params['roomFolderId'] = params['room_folder_id']
+        if 'name_filter' in params:
+            query_params['nameFilter'] = params['name_filter']
+        if 'include_archived' in params:
+            query_params['includeArchived'] = params['include_archived']
 
         header_params = {}
 
@@ -826,6 +864,10 @@ class RoomsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
@@ -847,7 +889,8 @@ class RoomsApi(object):
 
     def get_room(self, room_id, account_id, **kwargs):
         """
-        Gets information about the given 
+        Gets information about the given room.
+        Returns details about the given room
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -858,8 +901,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param bool include_field_data: Indicates if field data (a.k.a., room details) should be included in the response. Defaults to false.
         :return: Room
                  If the method is called asynchronously,
@@ -874,7 +917,8 @@ class RoomsApi(object):
 
     def get_room_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Gets information about the given 
+        Gets information about the given room.
+        Returns details about the given room
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -885,8 +929,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param bool include_field_data: Indicates if field data (a.k.a., room details) should be included in the response. Defaults to false.
         :return: Room
                  If the method is called asynchronously,
@@ -939,6 +983,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -960,6 +1008,7 @@ class RoomsApi(object):
     def get_room_field_data(self, room_id, account_id, **kwargs):
         """
         Returns the FieldData associated with the provided roomId.
+        Returns the field data associated with a room. This is the information that appears on the room's **Details** tab.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -970,8 +1019,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FieldData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -986,6 +1035,7 @@ class RoomsApi(object):
     def get_room_field_data_with_http_info(self, room_id, account_id, **kwargs):
         """
         Returns the FieldData associated with the provided roomId.
+        Returns the field data associated with a room. This is the information that appears on the room's **Details** tab.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -996,8 +1046,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FieldData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1047,6 +1097,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1067,7 +1121,8 @@ class RoomsApi(object):
 
     def get_room_field_set(self, room_id, account_id, **kwargs):
         """
-        Gets the field set associated with the 
+        Gets the field set associated with the room.
+        Returns the field set that a room uses.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1078,8 +1133,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FieldSet
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1093,7 +1148,8 @@ class RoomsApi(object):
 
     def get_room_field_set_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Gets the field set associated with the 
+        Gets the field set associated with the room.
+        Returns the field set that a room uses.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1104,8 +1160,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FieldSet
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1155,6 +1211,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1175,7 +1235,8 @@ class RoomsApi(object):
 
     def get_room_users(self, room_id, account_id, **kwargs):
         """
-        Retrieves the list of users in the given 
+        Retrieves the list of users in the given room.
+        This method returns a list of users associated with a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1186,8 +1247,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of room users to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param str filter: Returns room users filtered by Name and Email.
@@ -1205,7 +1266,8 @@ class RoomsApi(object):
 
     def get_room_users_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Retrieves the list of users in the given 
+        Retrieves the list of users in the given room.
+        This method returns a list of users associated with a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1216,8 +1278,8 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of room users to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param str filter: Returns room users filtered by Name and Email.
@@ -1279,6 +1341,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1300,6 +1366,7 @@ class RoomsApi(object):
     def get_rooms(self, account_id, **kwargs):
         """
         Gets rooms available to the calling user.
+        Gets rooms available to the calling user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1310,7 +1377,7 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of rooms to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param str room_status: Status of the rooms to return. Defaults to \"Active\".
@@ -1333,6 +1400,7 @@ class RoomsApi(object):
     def get_rooms_with_http_info(self, account_id, **kwargs):
         """
         Gets rooms available to the calling user.
+        Gets rooms available to the calling user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1343,7 +1411,7 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of rooms to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param str room_status: Status of the rooms to return. Defaults to \"Active\".
@@ -1412,6 +1480,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1433,6 +1505,7 @@ class RoomsApi(object):
     def invite_user(self, room_id, account_id, **kwargs):
         """
         Invites a user to the room by email address.
+        This method invites an existing or new member to a specific room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1443,9 +1516,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id: (required)
-        :param str account_id: (required)
-        :param RoomInvite body:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomInvite body: 
         :return: RoomInviteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1460,6 +1533,7 @@ class RoomsApi(object):
     def invite_user_with_http_info(self, room_id, account_id, **kwargs):
         """
         Invites a user to the room by email address.
+        This method invites an existing or new member to a specific room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1470,9 +1544,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id: (required)
-        :param str account_id: (required)
-        :param RoomInvite body:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomInvite body: 
         :return: RoomInviteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1549,6 +1623,7 @@ class RoomsApi(object):
     def put_room_user(self, room_id, user_id, account_id, **kwargs):
         """
         Updates the specified user's role and transaction side.
+        Updates the specified user's role and transaction side.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1559,10 +1634,10 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id: (required)
-        :param int user_id: (required)
-        :param str account_id: (required)
-        :param RoomUserForUpdate body:
+        :param int room_id: The id of the room. (required)
+        :param int user_id: The id of the user to update. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomUserForUpdate body: 
         :return: RoomUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1577,6 +1652,7 @@ class RoomsApi(object):
     def put_room_user_with_http_info(self, room_id, user_id, account_id, **kwargs):
         """
         Updates the specified user's role and transaction side.
+        Updates the specified user's role and transaction side.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1587,10 +1663,10 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id: (required)
-        :param int user_id: (required)
-        :param str account_id: (required)
-        :param RoomUserForUpdate body:
+        :param int room_id: The id of the room. (required)
+        :param int user_id: The id of the user to update. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomUserForUpdate body: 
         :return: RoomUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1671,7 +1747,8 @@ class RoomsApi(object):
 
     def restore_room_user_access(self, room_id, user_id, account_id, **kwargs):
         """
-        Restores the specified user's access to the 
+        Restores the specified user's access to the room.
+        Restores the specified user's access to the room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1684,7 +1761,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The room Id to restore access (required)
         :param int user_id: The user Id getting restored to the room (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1698,7 +1775,8 @@ class RoomsApi(object):
 
     def restore_room_user_access_with_http_info(self, room_id, user_id, account_id, **kwargs):
         """
-        Restores the specified user's access to the 
+        Restores the specified user's access to the room.
+        Restores the specified user's access to the room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1711,7 +1789,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The room Id to restore access (required)
         :param int user_id: The user Id getting restored to the room (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1766,6 +1844,10 @@ class RoomsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -1786,7 +1868,8 @@ class RoomsApi(object):
 
     def revoke_room_user_access(self, room_id, user_id, account_id, **kwargs):
         """
-        Revokes the specified user's access to the 
+        Revokes the specified user's access to the room.
+        Revokes the specified user's access to the room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1799,8 +1882,8 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The room Id to revoke access from (required)
         :param int user_id: The user Id getting revoked from the room (required)
-        :param str account_id: (required)
-        :param RoomUserRemovalDetail body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomUserRemovalDetail body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1814,7 +1897,8 @@ class RoomsApi(object):
 
     def revoke_room_user_access_with_http_info(self, room_id, user_id, account_id, **kwargs):
         """
-        Revokes the specified user's access to the 
+        Revokes the specified user's access to the room.
+        Revokes the specified user's access to the room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1827,8 +1911,8 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The room Id to revoke access from (required)
         :param int user_id: The user Id getting revoked from the room (required)
-        :param str account_id: (required)
-        :param RoomUserRemovalDetail body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param RoomUserRemovalDetail body: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1909,7 +1993,7 @@ class RoomsApi(object):
 
     def update_picture(self, room_id, account_id, **kwargs):
         """
-        Update the picture for a 
+        Update the picture for a room.
         This endpoint supports the following content types, application/json as JSON PictureForUpdate{\"fileName\":\"string\", \"Base64Contents\":\"string\"}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1922,8 +2006,8 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: ID of the room the picture is for. (required)
-        :param str account_id: (required)
-        :param file file:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param file file: 
         :return: RoomPicture
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1937,7 +2021,7 @@ class RoomsApi(object):
 
     def update_picture_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Update the picture for a 
+        Update the picture for a room.
         This endpoint supports the following content types, application/json as JSON PictureForUpdate{\"fileName\":\"string\", \"Base64Contents\":\"string\"}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1950,8 +2034,8 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: ID of the room the picture is for. (required)
-        :param str account_id: (required)
-        :param file file:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param file file: 
         :return: RoomPicture
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2028,6 +2112,7 @@ class RoomsApi(object):
     def update_room_field_data(self, room_id, account_id, **kwargs):
         """
         Updates room field data.
+        Updates room field data.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2038,9 +2123,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
-        :param FieldDataForUpdate body:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FieldDataForUpdate body: 
         :return: FieldData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2055,6 +2140,7 @@ class RoomsApi(object):
     def update_room_field_data_with_http_info(self, room_id, account_id, **kwargs):
         """
         Updates room field data.
+        Updates room field data.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2065,9 +2151,9 @@ class RoomsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int room_id:  (required)
-        :param str account_id: (required)
-        :param FieldDataForUpdate body:
+        :param int room_id: The id of the room. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FieldDataForUpdate body: 
         :return: FieldData
                  If the method is called asynchronously,
                  returns the request thread.
