@@ -43,6 +43,7 @@ class TaskListTemplatesApi(object):
     def get_task_list_templates(self, account_id, **kwargs):
         """
         Returns all task list templates for the company of the active user.
+        Returns all task list templates for the company of the active user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,9 +54,9 @@ class TaskListTemplatesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param int start_position: 
-        :param int count: 
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param int start_position: The starting zero-based index position from which to start returning values. The default is `0`.
+        :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
         :return: TaskListTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,6 +71,7 @@ class TaskListTemplatesApi(object):
     def get_task_list_templates_with_http_info(self, account_id, **kwargs):
         """
         Returns all task list templates for the company of the active user.
+        Returns all task list templates for the company of the active user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,9 +82,9 @@ class TaskListTemplatesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param int start_position: 
-        :param int count: 
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param int start_position: The starting zero-based index position from which to start returning values. The default is `0`.
+        :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
         :return: TaskListTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -130,6 +132,10 @@ class TaskListTemplatesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

@@ -43,6 +43,7 @@ class OfficesApi(object):
     def create_office(self, account_id, **kwargs):
         """
         Create an office.
+        Create an office.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,8 +54,8 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param OfficeForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param OfficeForCreate body: 
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
@@ -69,6 +70,7 @@ class OfficesApi(object):
     def create_office_with_http_info(self, account_id, **kwargs):
         """
         Create an office.
+        Create an office.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -79,8 +81,8 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param OfficeForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param OfficeForCreate body: 
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,6 +154,7 @@ class OfficesApi(object):
     def delete_office(self, office_id, account_id, **kwargs):
         """
         Delete an office.
+        This method deletes an office from a Rooms account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -163,7 +166,7 @@ class OfficesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -178,6 +181,7 @@ class OfficesApi(object):
     def delete_office_with_http_info(self, office_id, account_id, **kwargs):
         """
         Delete an office.
+        This method deletes an office from a Rooms account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -189,7 +193,7 @@ class OfficesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -239,6 +243,10 @@ class OfficesApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -260,6 +268,7 @@ class OfficesApi(object):
     def get_office(self, office_id, account_id, **kwargs):
         """
         Get information about the office with the given officeId.
+        Get information about the office with the given officeId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -270,8 +279,8 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int office_id:  (required)
-        :param str account_id: (required)
+        :param int office_id: The id of the office. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
@@ -286,6 +295,7 @@ class OfficesApi(object):
     def get_office_with_http_info(self, office_id, account_id, **kwargs):
         """
         Get information about the office with the given officeId.
+        Get information about the office with the given officeId.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -296,8 +306,8 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int office_id:  (required)
-        :param str account_id: (required)
+        :param int office_id: The id of the office. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
@@ -347,6 +357,10 @@ class OfficesApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -367,7 +381,8 @@ class OfficesApi(object):
 
     def get_offices(self, account_id, **kwargs):
         """
-        Get all 
+        Get all offices.
+        This method returns a list of offices associated with an account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -378,7 +393,7 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of offices to include in the response, (Default 100)
         :param int start_position: Position in the overall list of offices to begin results.
         :param bool only_accessible: When true, the response only includes offices accessible to the calling user.
@@ -396,7 +411,8 @@ class OfficesApi(object):
 
     def get_offices_with_http_info(self, account_id, **kwargs):
         """
-        Get all 
+        Get all offices.
+        This method returns a list of offices associated with an account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -407,7 +423,7 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of offices to include in the response, (Default 100)
         :param int start_position: Position in the overall list of offices to begin results.
         :param bool only_accessible: When true, the response only includes offices accessible to the calling user.
@@ -464,6 +480,10 @@ class OfficesApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -485,6 +505,7 @@ class OfficesApi(object):
     def get_reference_counts(self, office_id, account_id, **kwargs):
         """
         Lists the number of objects of each type that reference the office.
+        This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -496,7 +517,7 @@ class OfficesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: OfficeReferenceCountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -511,6 +532,7 @@ class OfficesApi(object):
     def get_reference_counts_with_http_info(self, office_id, account_id, **kwargs):
         """
         Lists the number of objects of each type that reference the office.
+        This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -522,7 +544,7 @@ class OfficesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: OfficeReferenceCountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -571,6 +593,10 @@ class OfficesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

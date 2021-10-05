@@ -43,6 +43,7 @@ class TaskListsApi(object):
     def create_task_list(self, room_id, account_id, **kwargs):
         """
         Add a task list to a room based on a task list template.
+        Applies a task list to a room, based on the `taskTemplateId` that you specify in the `taskList` request body.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -54,8 +55,8 @@ class TaskListsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Room ID. (required)
-        :param str account_id: (required)
-        :param TaskListForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param TaskListForCreate body: 
         :return: TaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,6 +71,7 @@ class TaskListsApi(object):
     def create_task_list_with_http_info(self, room_id, account_id, **kwargs):
         """
         Add a task list to a room based on a task list template.
+        Applies a task list to a room, based on the `taskTemplateId` that you specify in the `taskList` request body.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -81,8 +83,8 @@ class TaskListsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Room ID. (required)
-        :param str account_id: (required)
-        :param TaskListForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param TaskListForCreate body: 
         :return: TaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -158,7 +160,8 @@ class TaskListsApi(object):
 
     def delete_task_list(self, task_list_id, account_id, **kwargs):
         """
-        Deletes a task list. If there are attached documents they will remain in the associated 
+        Deletes a task list. If there are attached documents they will remain in the associated room.
+        Deletes the specified task list from a room. If there are attached documents, they will remain in the associated room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -170,7 +173,7 @@ class TaskListsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int task_list_id: Task List ID (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -184,7 +187,8 @@ class TaskListsApi(object):
 
     def delete_task_list_with_http_info(self, task_list_id, account_id, **kwargs):
         """
-        Deletes a task list. If there are attached documents they will remain in the associated 
+        Deletes a task list. If there are attached documents they will remain in the associated room.
+        Deletes the specified task list from a room. If there are attached documents, they will remain in the associated room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -196,7 +200,7 @@ class TaskListsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int task_list_id: Task List ID (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -246,6 +250,10 @@ class TaskListsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -266,7 +274,8 @@ class TaskListsApi(object):
 
     def get_task_lists(self, room_id, account_id, **kwargs):
         """
-        Returns the summary for all viewable task lists in a 
+        Returns the summary for all viewable task lists in a room.
+        Returns the task lists associated with a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -278,7 +287,7 @@ class TaskListsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Room ID (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: TaskListSummaryList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -292,7 +301,8 @@ class TaskListsApi(object):
 
     def get_task_lists_with_http_info(self, room_id, account_id, **kwargs):
         """
-        Returns the summary for all viewable task lists in a 
+        Returns the summary for all viewable task lists in a room.
+        Returns the task lists associated with a room.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -304,7 +314,7 @@ class TaskListsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int room_id: Room ID (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: TaskListSummaryList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -353,6 +363,10 @@ class TaskListsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

@@ -43,6 +43,7 @@ class RegionsApi(object):
     def create_region(self, account_id, **kwargs):
         """
         Creates a new region for a company
+        Creates a new region for a company
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,8 +54,8 @@ class RegionsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param Region body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param Region body: 
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
@@ -69,6 +70,7 @@ class RegionsApi(object):
     def create_region_with_http_info(self, account_id, **kwargs):
         """
         Creates a new region for a company
+        Creates a new region for a company
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -79,8 +81,8 @@ class RegionsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param Region body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param Region body: 
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,6 +154,7 @@ class RegionsApi(object):
     def delete_region(self, region_id, account_id, **kwargs):
         """
         Delete a region.
+        Delete a region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -163,7 +166,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int region_id: Id of the desired region (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -178,6 +181,7 @@ class RegionsApi(object):
     def delete_region_with_http_info(self, region_id, account_id, **kwargs):
         """
         Delete a region.
+        Delete a region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -189,7 +193,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int region_id: Id of the desired region (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -239,6 +243,10 @@ class RegionsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -260,6 +268,7 @@ class RegionsApi(object):
     def get_region(self, region_id, account_id, **kwargs):
         """
         Get information about the region with the given regionId
+        Get information about the region with the given regionId
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -271,7 +280,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int region_id: Id of the desired region (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
@@ -286,6 +295,7 @@ class RegionsApi(object):
     def get_region_with_http_info(self, region_id, account_id, **kwargs):
         """
         Get information about the region with the given regionId
+        Get information about the region with the given regionId
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -297,7 +307,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int region_id: Id of the desired region (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
@@ -347,6 +357,10 @@ class RegionsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -368,6 +382,7 @@ class RegionsApi(object):
     def get_region_reference_counts(self, region_id, account_id, **kwargs):
         """
         Get region reference counts.
+        This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -379,7 +394,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int region_id: Id of the desired region (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: RegionReferenceCountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -394,6 +409,7 @@ class RegionsApi(object):
     def get_region_reference_counts_with_http_info(self, region_id, account_id, **kwargs):
         """
         Get region reference counts.
+        This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -405,7 +421,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int region_id: Id of the desired region (required)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: RegionReferenceCountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -455,6 +471,10 @@ class RegionsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -475,7 +495,8 @@ class RegionsApi(object):
 
     def get_regions(self, account_id, **kwargs):
         """
-        Get account 
+        Get account regions.
+        Returns a list of regions that are associated with a Rooms account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -486,7 +507,7 @@ class RegionsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of regions to include in the response, (Default 100).
         :param int start_position: Position in the overall list of regions to begin results.
         :param bool managed_only: When true, the response only includes regions that the calling user can manage.
@@ -503,7 +524,8 @@ class RegionsApi(object):
 
     def get_regions_with_http_info(self, account_id, **kwargs):
         """
-        Get account 
+        Get account regions.
+        Returns a list of regions that are associated with a Rooms account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -514,7 +536,7 @@ class RegionsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of regions to include in the response, (Default 100).
         :param int start_position: Position in the overall list of regions to begin results.
         :param bool managed_only: When true, the response only includes regions that the calling user can manage.
@@ -567,6 +589,10 @@ class RegionsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

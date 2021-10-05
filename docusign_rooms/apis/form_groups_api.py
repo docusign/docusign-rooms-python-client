@@ -43,6 +43,7 @@ class FormGroupsApi(object):
     def assign_form_group_form(self, form_group_id, account_id, **kwargs):
         """
         Assigns a form to a form group.
+        Assigns the form specified in the `formId` property of the request to the form group `formGroupId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,9 +54,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
-        :param FormGroupFormToAssign body:
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormGroupFormToAssign body: 
         :return: FormGroupFormToAssign
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,6 +71,7 @@ class FormGroupsApi(object):
     def assign_form_group_form_with_http_info(self, form_group_id, account_id, **kwargs):
         """
         Assigns a form to a form group.
+        Assigns the form specified in the `formId` property of the request to the form group `formGroupId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -80,9 +82,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
-        :param FormGroupFormToAssign body:
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormGroupFormToAssign body: 
         :return: FormGroupFormToAssign
                  If the method is called asynchronously,
                  returns the request thread.
@@ -159,6 +161,7 @@ class FormGroupsApi(object):
     def create_form_group(self, account_id, **kwargs):
         """
         Creates a form group.
+        Creates a new form group with the name given in the `name` property of the request body.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -169,8 +172,8 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param FormGroupForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormGroupForCreate body: 
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -185,6 +188,7 @@ class FormGroupsApi(object):
     def create_form_group_with_http_info(self, account_id, **kwargs):
         """
         Creates a form group.
+        Creates a new form group with the name given in the `name` property of the request body.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -195,8 +199,8 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param FormGroupForCreate body:
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormGroupForCreate body: 
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -268,6 +272,7 @@ class FormGroupsApi(object):
     def delete_form_group(self, form_group_id, account_id, **kwargs):
         """
         Deletes a form group.
+        Deletes the specified form group.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -278,8 +283,8 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -294,6 +299,7 @@ class FormGroupsApi(object):
     def delete_form_group_with_http_info(self, form_group_id, account_id, **kwargs):
         """
         Deletes a form group.
+        Deletes the specified form group.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -304,8 +310,8 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -355,6 +361,10 @@ class FormGroupsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -376,6 +386,7 @@ class FormGroupsApi(object):
     def get_form_group(self, form_group_id, account_id, **kwargs):
         """
         Gets a form group.
+        Get the specified form group.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -386,8 +397,8 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -402,6 +413,7 @@ class FormGroupsApi(object):
     def get_form_group_with_http_info(self, form_group_id, account_id, **kwargs):
         """
         Gets a form group.
+        Get the specified form group.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -412,8 +424,8 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -463,6 +475,10 @@ class FormGroupsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -484,6 +500,7 @@ class FormGroupsApi(object):
     def get_form_groups(self, account_id, **kwargs):
         """
         Get account Form Groups.
+        Returns the company form groups to which the current user has access.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -494,7 +511,7 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of Form Groups to include in the response, (Default 100).
         :param int start_position: Position in the overall list of Form Groups to begin results.
         :return: FormGroupSummaryList
@@ -511,6 +528,7 @@ class FormGroupsApi(object):
     def get_form_groups_with_http_info(self, account_id, **kwargs):
         """
         Get account Form Groups.
+        Returns the company form groups to which the current user has access.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -521,7 +539,7 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of Form Groups to include in the response, (Default 100).
         :param int start_position: Position in the overall list of Form Groups to begin results.
         :return: FormGroupSummaryList
@@ -572,6 +590,10 @@ class FormGroupsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -593,6 +615,7 @@ class FormGroupsApi(object):
     def grant_office_access_to_form_group(self, form_group_id, office_id, account_id, **kwargs):
         """
         Assign office to a form group so the specified office has access to the form group.
+        \"Grants the office `officeId` access to the form group `formGroupId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -603,9 +626,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param int office_id: The id of the office. This is the id that the system generated when you created the office. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -620,6 +643,7 @@ class FormGroupsApi(object):
     def grant_office_access_to_form_group_with_http_info(self, form_group_id, office_id, account_id, **kwargs):
         """
         Assign office to a form group so the specified office has access to the form group.
+        \"Grants the office `officeId` access to the form group `formGroupId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -630,9 +654,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param int office_id: The id of the office. This is the id that the system generated when you created the office. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -687,6 +711,10 @@ class FormGroupsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -708,6 +736,7 @@ class FormGroupsApi(object):
     def remove_form_group_form(self, form_group_id, form_id, account_id, **kwargs):
         """
         Removes a form from a form group.
+        Removes the form `formId` from the form group `formGroupId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -718,9 +747,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str form_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param str form_id: The id of the form. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -735,6 +764,7 @@ class FormGroupsApi(object):
     def remove_form_group_form_with_http_info(self, form_group_id, form_id, account_id, **kwargs):
         """
         Removes a form from a form group.
+        Removes the form `formId` from the form group `formGroupId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -745,9 +775,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str form_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param str form_id: The id of the form. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -802,6 +832,10 @@ class FormGroupsApi(object):
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+
         # Authentication setting
         auth_settings = []
 
@@ -823,6 +857,7 @@ class FormGroupsApi(object):
     def rename_form_group(self, form_group_id, account_id, **kwargs):
         """
         Renames a form group.
+        Renames the specified form group with the name given in the `name` property of the request.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -833,9 +868,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
-        :param FormGroupForUpdate body:
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormGroupForUpdate body: 
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -850,6 +885,7 @@ class FormGroupsApi(object):
     def rename_form_group_with_http_info(self, form_group_id, account_id, **kwargs):
         """
         Renames a form group.
+        Renames the specified form group with the name given in the `name` property of the request.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -860,9 +896,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param str account_id: (required)
-        :param FormGroupForUpdate body:
+        :param str form_group_id: The ID of the form group. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
+        :param FormGroupForUpdate body: 
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -939,6 +975,7 @@ class FormGroupsApi(object):
     def revoke_office_access_from_form_group(self, form_group_id, office_id, account_id, **kwargs):
         """
         Remove office to a form group so the specified office doesn't have access to the form group.
+        Revoke access to the form group `formGroupId` from the office `officeId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -949,9 +986,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param int office_id: The id of the office. This is the id that the system generated when you created the office. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -966,6 +1003,7 @@ class FormGroupsApi(object):
     def revoke_office_access_from_form_group_with_http_info(self, form_group_id, office_id, account_id, **kwargs):
         """
         Remove office to a form group so the specified office doesn't have access to the form group.
+        Revoke access to the form group `formGroupId` from the office `officeId`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -976,9 +1014,9 @@ class FormGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str form_group_id:  (required)
-        :param int office_id:  (required)
-        :param str account_id: (required)
+        :param str form_group_id: The ID of the form group. (required)
+        :param int office_id: The id of the office. This is the id that the system generated when you created the office. (required)
+        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1032,6 +1070,10 @@ class FormGroupsApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []

@@ -43,6 +43,7 @@ class SellerDecisionTypesApi(object):
     def get_seller_decision_types(self, **kwargs):
         """
         Retrieves the list of valid seller decision types.
+        Returns a list of valid seller decision types.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -67,6 +68,7 @@ class SellerDecisionTypesApi(object):
     def get_seller_decision_types_with_http_info(self, **kwargs):
         """
         Retrieves the list of valid seller decision types.
+        Returns a list of valid seller decision types.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -114,6 +116,10 @@ class SellerDecisionTypesApi(object):
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['text/plain', 'application/json', 'text/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
 
         # Authentication setting
         auth_settings = []
