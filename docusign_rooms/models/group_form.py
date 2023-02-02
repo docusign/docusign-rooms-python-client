@@ -36,14 +36,16 @@ class GroupForm(object):
         'form_id': 'str',
         'name': 'str',
         'is_required': 'bool',
-        'last_updated_date': 'datetime'
+        'last_updated_date': 'datetime',
+        'viewing_user_has_access': 'bool'
     }
 
     attribute_map = {
         'form_id': 'formId',
         'name': 'name',
         'is_required': 'isRequired',
-        'last_updated_date': 'lastUpdatedDate'
+        'last_updated_date': 'lastUpdatedDate',
+        'viewing_user_has_access': 'viewingUserHasAccess'
     }
 
     def __init__(self, _configuration=None, **kwargs):  # noqa: E501
@@ -56,12 +58,14 @@ class GroupForm(object):
         self._name = None
         self._is_required = None
         self._last_updated_date = None
+        self._viewing_user_has_access = None
         self.discriminator = None
 
         setattr(self, "_{}".format('form_id'), kwargs.get('form_id', None))
         setattr(self, "_{}".format('name'), kwargs.get('name', None))
         setattr(self, "_{}".format('is_required'), kwargs.get('is_required', None))
         setattr(self, "_{}".format('last_updated_date'), kwargs.get('last_updated_date', None))
+        setattr(self, "_{}".format('viewing_user_has_access'), kwargs.get('viewing_user_has_access', None))
 
     @property
     def form_id(self):
@@ -146,6 +150,27 @@ class GroupForm(object):
         """
 
         self._last_updated_date = last_updated_date
+
+    @property
+    def viewing_user_has_access(self):
+        """Gets the viewing_user_has_access of this GroupForm.  # noqa: E501
+
+
+        :return: The viewing_user_has_access of this GroupForm.  # noqa: E501
+        :rtype: bool
+        """
+        return self._viewing_user_has_access
+
+    @viewing_user_has_access.setter
+    def viewing_user_has_access(self, viewing_user_has_access):
+        """Sets the viewing_user_has_access of this GroupForm.
+
+
+        :param viewing_user_has_access: The viewing_user_has_access of this GroupForm.  # noqa: E501
+        :type: bool
+        """
+
+        self._viewing_user_has_access = viewing_user_has_access
 
     def to_dict(self):
         """Returns the model properties as a dict"""

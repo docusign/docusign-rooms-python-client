@@ -56,7 +56,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedOffice body: 
+        :param DesignatedOffice body: Details of the office that the user will be added to
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -84,7 +84,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedOffice body: 
+        :param DesignatedOffice body: Details of the office that the user will be added to
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,11 +134,11 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -174,7 +174,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedRegion body: 
+        :param DesignatedRegion body: Region that given user will be added to
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -202,7 +202,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedRegion body: 
+        :param DesignatedRegion body: Region that given user will be added to
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -252,11 +252,11 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -366,7 +366,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -406,12 +406,12 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param str filter: Filters by name and email
-        :param str sort: Valid values are 'FirstNameAsc', 'FirstNameDesc', 'LastNameAsc', 'LastNameDesc', 'EmailAsc', 'EmailDesc'
-        :param int default_office_id: 
-        :param str access_level: Valid values are 'Company', 'Region', 'Office', 'Contributor'
+        :param object sort: Valid values are 'FirstNameAsc', 'FirstNameDesc', 'LastNameAsc', 'LastNameDesc', 'EmailAsc', 'EmailDesc'
+        :param int default_office_id: Default office ID
+        :param object access_level: Valid values are 'Company', 'Region', 'Office', 'Contributor'
         :param int title_id: Only valid for classic companies
         :param int role_id: Only valid for next gen companies
-        :param str status: Valid values are 'Active', 'Pending'
+        :param object status: Valid values are 'Active', 'Pending'
         :param bool locked_only: When set to true, filters for users whose accounts are locked
         :param int start_position: Defaults to 0
         :param int count: Defaults to 100. Must be less than or equal to 100
@@ -442,12 +442,12 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param str filter: Filters by name and email
-        :param str sort: Valid values are 'FirstNameAsc', 'FirstNameDesc', 'LastNameAsc', 'LastNameDesc', 'EmailAsc', 'EmailDesc'
-        :param int default_office_id: 
-        :param str access_level: Valid values are 'Company', 'Region', 'Office', 'Contributor'
+        :param object sort: Valid values are 'FirstNameAsc', 'FirstNameDesc', 'LastNameAsc', 'LastNameDesc', 'EmailAsc', 'EmailDesc'
+        :param int default_office_id: Default office ID
+        :param object access_level: Valid values are 'Company', 'Region', 'Office', 'Contributor'
         :param int title_id: Only valid for classic companies
         :param int role_id: Only valid for next gen companies
-        :param str status: Valid values are 'Active', 'Pending'
+        :param object status: Valid values are 'Active', 'Pending'
         :param bool locked_only: When set to true, filters for users whose accounts are locked
         :param int start_position: Defaults to 0
         :param int count: Defaults to 100. Must be less than or equal to 100
@@ -513,7 +513,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -537,339 +537,6 @@ class UsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def invite_classic_admin(self, account_id, **kwargs):
-        """
-        CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
-        Invites a new user to join a company account on Rooms Version 5 as an Admin.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.invite_classic_admin(account_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ClassicAdminToInvite body: 
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.invite_classic_admin_with_http_info(account_id, **kwargs)
-        else:
-            (data) = self.invite_classic_admin_with_http_info(account_id, **kwargs)
-            return data
-
-    def invite_classic_admin_with_http_info(self, account_id, **kwargs):
-        """
-        CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
-        Invites a new user to join a company account on Rooms Version 5 as an Admin.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.invite_classic_admin_with_http_info(account_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ClassicAdminToInvite body: 
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'body']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method invite_classic_admin" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `invite_classic_admin`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v2/accounts/{accountId}/users/invite_classic_admin'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'POST',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='User',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def invite_classic_agent(self, account_id, **kwargs):
-        """
-        CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
-        Invites a new user to join a company account on Rooms Version 5 as an Agent.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.invite_classic_agent(account_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ClassicAgentToInvite body: 
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.invite_classic_agent_with_http_info(account_id, **kwargs)
-        else:
-            (data) = self.invite_classic_agent_with_http_info(account_id, **kwargs)
-            return data
-
-    def invite_classic_agent_with_http_info(self, account_id, **kwargs):
-        """
-        CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
-        Invites a new user to join a company account on Rooms Version 5 as an Agent.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.invite_classic_agent_with_http_info(account_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ClassicAgentToInvite body: 
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'body']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method invite_classic_agent" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `invite_classic_agent`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v2/accounts/{accountId}/users/invite_classic_agent'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'POST',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='User',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def invite_classic_manager(self, account_id, **kwargs):
-        """
-        CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
-        Invites a new user to join a company account on Rooms Version 5 as a Manager.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.invite_classic_manager(account_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ClassicManagerToInvite body: 
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.invite_classic_manager_with_http_info(account_id, **kwargs)
-        else:
-            (data) = self.invite_classic_manager_with_http_info(account_id, **kwargs)
-            return data
-
-    def invite_classic_manager_with_http_info(self, account_id, **kwargs):
-        """
-        CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
-        Invites a new user to join a company account on Rooms Version 5 as a Manager.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.invite_classic_manager_with_http_info(account_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ClassicManagerToInvite body: 
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'body']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method invite_classic_manager" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `invite_classic_manager`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v2/accounts/{accountId}/users/invite_classic_manager'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'POST',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='User',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
     def invite_user(self, account_id, **kwargs):
         """
         NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
@@ -885,7 +552,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param UserToInvite body: 
+        :param UserToInvite body: Invitee information
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -912,7 +579,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param UserToInvite body: 
+        :param UserToInvite body: Invitee information
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -957,7 +624,7 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -997,7 +664,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be locked. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param LockedOutDetails body: 
+        :param LockedOutDetails body: Details containing the reason the user is being locked out
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1025,7 +692,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: User Id of the user attempting to be locked. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param LockedOutDetails body: 
+        :param LockedOutDetails body: Details containing the reason the user is being locked out
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1075,7 +742,7 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1113,7 +780,7 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
+        :param int user_id: ID of the user to be invited (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1140,7 +807,7 @@ class UsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int user_id:  (required)
+        :param int user_id: ID of the user to be invited (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1189,7 +856,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1303,7 +970,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1343,7 +1010,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedOffice body: 
+        :param DesignatedOffice body: Details of the office that the user will be removed from
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1371,7 +1038,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedOffice body: 
+        :param DesignatedOffice body: Details of the office that the user will be removed from
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1421,11 +1088,11 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -1461,7 +1128,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedRegion body: 
+        :param DesignatedRegion body: Region that given user will be removed from
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1489,7 +1156,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DesignatedRegion body: 
+        :param DesignatedRegion body: Region that given user will be removed from
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1539,11 +1206,11 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -1653,7 +1320,7 @@ class UsersApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1693,7 +1360,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param UserForUpdate body: 
+        :param UserForUpdate body: Request body to update the user
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1721,7 +1388,7 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param int user_id: The id of the user. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param UserForUpdate body: 
+        :param UserForUpdate body: Request body to update the user
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1771,11 +1438,11 @@ class UsersApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []

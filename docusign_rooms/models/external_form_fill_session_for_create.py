@@ -35,12 +35,14 @@ class ExternalFormFillSessionForCreate(object):
     swagger_types = {
         'form_id': 'str',
         'room_id': 'int',
+        'form_ids': 'list[str]',
         'x_frame_allowed_url': 'str'
     }
 
     attribute_map = {
         'form_id': 'formId',
         'room_id': 'roomId',
+        'form_ids': 'formIds',
         'x_frame_allowed_url': 'xFrameAllowedUrl'
     }
 
@@ -52,11 +54,13 @@ class ExternalFormFillSessionForCreate(object):
 
         self._form_id = None
         self._room_id = None
+        self._form_ids = None
         self._x_frame_allowed_url = None
         self.discriminator = None
 
         setattr(self, "_{}".format('form_id'), kwargs.get('form_id', None))
         setattr(self, "_{}".format('room_id'), kwargs.get('room_id', None))
+        setattr(self, "_{}".format('form_ids'), kwargs.get('form_ids', None))
         setattr(self, "_{}".format('x_frame_allowed_url'), kwargs.get('x_frame_allowed_url', None))
 
     @property
@@ -77,8 +81,6 @@ class ExternalFormFillSessionForCreate(object):
         :param form_id: The form_id of this ExternalFormFillSessionForCreate.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and form_id is None:
-            raise ValueError("Invalid value for `form_id`, must not be `None`")  # noqa: E501
 
         self._form_id = form_id
 
@@ -104,6 +106,27 @@ class ExternalFormFillSessionForCreate(object):
             raise ValueError("Invalid value for `room_id`, must not be `None`")  # noqa: E501
 
         self._room_id = room_id
+
+    @property
+    def form_ids(self):
+        """Gets the form_ids of this ExternalFormFillSessionForCreate.  # noqa: E501
+
+
+        :return: The form_ids of this ExternalFormFillSessionForCreate.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._form_ids
+
+    @form_ids.setter
+    def form_ids(self, form_ids):
+        """Sets the form_ids of this ExternalFormFillSessionForCreate.
+
+
+        :param form_ids: The form_ids of this ExternalFormFillSessionForCreate.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._form_ids = form_ids
 
     @property
     def x_frame_allowed_url(self):

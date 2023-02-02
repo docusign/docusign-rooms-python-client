@@ -37,10 +37,11 @@ class UserToInvite(object):
         'last_name': 'str',
         'email': 'str',
         'role_id': 'int',
-        'access_level': 'AccessLevel',
+        'access_level': 'str',
         'default_office_id': 'int',
         'regions': 'list[int]',
         'offices': 'list[int]',
+        'subscribe_to_rooms_activity_notifications': 'bool',
         'e_sign_permission_profile_id': 'str',
         'redirect_url': 'str'
     }
@@ -54,6 +55,7 @@ class UserToInvite(object):
         'default_office_id': 'defaultOfficeId',
         'regions': 'regions',
         'offices': 'offices',
+        'subscribe_to_rooms_activity_notifications': 'subscribeToRoomsActivityNotifications',
         'e_sign_permission_profile_id': 'eSignPermissionProfileId',
         'redirect_url': 'redirectUrl'
     }
@@ -72,6 +74,7 @@ class UserToInvite(object):
         self._default_office_id = None
         self._regions = None
         self._offices = None
+        self._subscribe_to_rooms_activity_notifications = None
         self._e_sign_permission_profile_id = None
         self._redirect_url = None
         self.discriminator = None
@@ -84,6 +87,7 @@ class UserToInvite(object):
         setattr(self, "_{}".format('default_office_id'), kwargs.get('default_office_id', None))
         setattr(self, "_{}".format('regions'), kwargs.get('regions', None))
         setattr(self, "_{}".format('offices'), kwargs.get('offices', None))
+        setattr(self, "_{}".format('subscribe_to_rooms_activity_notifications'), kwargs.get('subscribe_to_rooms_activity_notifications', None))
         setattr(self, "_{}".format('e_sign_permission_profile_id'), kwargs.get('e_sign_permission_profile_id', None))
         setattr(self, "_{}".format('redirect_url'), kwargs.get('redirect_url', None))
 
@@ -185,7 +189,7 @@ class UserToInvite(object):
 
 
         :return: The access_level of this UserToInvite.  # noqa: E501
-        :rtype: AccessLevel
+        :rtype: str
         """
         return self._access_level
 
@@ -195,10 +199,17 @@ class UserToInvite(object):
 
 
         :param access_level: The access_level of this UserToInvite.  # noqa: E501
-        :type: AccessLevel
+        :type: str
         """
         if self._configuration.client_side_validation and access_level is None:
             raise ValueError("Invalid value for `access_level`, must not be `None`")  # noqa: E501
+        allowed_values = ["Contributor", "Office", "Region", "Company", "Admin"]  # noqa: E501
+        if (self._configuration.client_side_validation and
+                access_level not in allowed_values):
+            raise ValueError(
+                "Invalid value for `access_level` ({0}), must be one of {1}"  # noqa: E501
+                .format(access_level, allowed_values)
+            )
 
         self._access_level = access_level
 
@@ -266,6 +277,27 @@ class UserToInvite(object):
         """
 
         self._offices = offices
+
+    @property
+    def subscribe_to_rooms_activity_notifications(self):
+        """Gets the subscribe_to_rooms_activity_notifications of this UserToInvite.  # noqa: E501
+
+
+        :return: The subscribe_to_rooms_activity_notifications of this UserToInvite.  # noqa: E501
+        :rtype: bool
+        """
+        return self._subscribe_to_rooms_activity_notifications
+
+    @subscribe_to_rooms_activity_notifications.setter
+    def subscribe_to_rooms_activity_notifications(self, subscribe_to_rooms_activity_notifications):
+        """Sets the subscribe_to_rooms_activity_notifications of this UserToInvite.
+
+
+        :param subscribe_to_rooms_activity_notifications: The subscribe_to_rooms_activity_notifications of this UserToInvite.  # noqa: E501
+        :type: bool
+        """
+
+        self._subscribe_to_rooms_activity_notifications = subscribe_to_rooms_activity_notifications
 
     @property
     def e_sign_permission_profile_id(self):

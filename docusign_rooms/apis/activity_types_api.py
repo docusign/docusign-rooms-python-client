@@ -43,7 +43,7 @@ class ActivityTypesApi(object):
     def get_activity_types(self, **kwargs):
         """
         Retrieves the list of valid activity types.
-        Retrieves the list of valid activity types.
+        Returns the list of valid activity types.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -68,7 +68,7 @@ class ActivityTypesApi(object):
     def get_activity_types_with_http_info(self, **kwargs):
         """
         Retrieves the list of valid activity types.
-        Retrieves the list of valid activity types.
+        Returns the list of valid activity types.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -115,7 +115,7 @@ class ActivityTypesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\

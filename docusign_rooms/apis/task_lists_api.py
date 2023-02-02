@@ -56,7 +56,7 @@ class TaskListsApi(object):
             for asynchronous request. (optional)
         :param int room_id: Room ID. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param TaskListForCreate body: 
+        :param TaskListForCreate body: Details for task list creation
         :return: TaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -84,7 +84,7 @@ class TaskListsApi(object):
             for asynchronous request. (optional)
         :param int room_id: Room ID. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param TaskListForCreate body: 
+        :param TaskListForCreate body: Details for task list creation
         :return: TaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,7 +134,7 @@ class TaskListsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -248,7 +248,7 @@ class TaskListsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -362,7 +362,7 @@ class TaskListsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
