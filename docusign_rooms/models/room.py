@@ -42,8 +42,10 @@ class Room(object):
         'closed_date': 'datetime',
         'rejected_date': 'datetime',
         'created_by_user_id': 'int',
+        'room_owner_ids': 'list[int]',
         'rejected_by_user_id': 'int',
         'closed_status_id': 'str',
+        'field_data_last_updated_date': 'datetime',
         'field_data': 'FieldData'
     }
 
@@ -57,8 +59,10 @@ class Room(object):
         'closed_date': 'closedDate',
         'rejected_date': 'rejectedDate',
         'created_by_user_id': 'createdByUserId',
+        'room_owner_ids': 'roomOwnerIds',
         'rejected_by_user_id': 'rejectedByUserId',
         'closed_status_id': 'closedStatusId',
+        'field_data_last_updated_date': 'fieldDataLastUpdatedDate',
         'field_data': 'fieldData'
     }
 
@@ -77,8 +81,10 @@ class Room(object):
         self._closed_date = None
         self._rejected_date = None
         self._created_by_user_id = None
+        self._room_owner_ids = None
         self._rejected_by_user_id = None
         self._closed_status_id = None
+        self._field_data_last_updated_date = None
         self._field_data = None
         self.discriminator = None
 
@@ -91,8 +97,10 @@ class Room(object):
         setattr(self, "_{}".format('closed_date'), kwargs.get('closed_date', None))
         setattr(self, "_{}".format('rejected_date'), kwargs.get('rejected_date', None))
         setattr(self, "_{}".format('created_by_user_id'), kwargs.get('created_by_user_id', None))
+        setattr(self, "_{}".format('room_owner_ids'), kwargs.get('room_owner_ids', None))
         setattr(self, "_{}".format('rejected_by_user_id'), kwargs.get('rejected_by_user_id', None))
         setattr(self, "_{}".format('closed_status_id'), kwargs.get('closed_status_id', None))
+        setattr(self, "_{}".format('field_data_last_updated_date'), kwargs.get('field_data_last_updated_date', None))
         setattr(self, "_{}".format('field_data'), kwargs.get('field_data', None))
 
     @property
@@ -285,6 +293,27 @@ class Room(object):
         self._created_by_user_id = created_by_user_id
 
     @property
+    def room_owner_ids(self):
+        """Gets the room_owner_ids of this Room.  # noqa: E501
+
+
+        :return: The room_owner_ids of this Room.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._room_owner_ids
+
+    @room_owner_ids.setter
+    def room_owner_ids(self, room_owner_ids):
+        """Sets the room_owner_ids of this Room.
+
+
+        :param room_owner_ids: The room_owner_ids of this Room.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._room_owner_ids = room_owner_ids
+
+    @property
     def rejected_by_user_id(self):
         """Gets the rejected_by_user_id of this Room.  # noqa: E501
 
@@ -325,6 +354,27 @@ class Room(object):
         """
 
         self._closed_status_id = closed_status_id
+
+    @property
+    def field_data_last_updated_date(self):
+        """Gets the field_data_last_updated_date of this Room.  # noqa: E501
+
+
+        :return: The field_data_last_updated_date of this Room.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._field_data_last_updated_date
+
+    @field_data_last_updated_date.setter
+    def field_data_last_updated_date(self, field_data_last_updated_date):
+        """Sets the field_data_last_updated_date of this Room.
+
+
+        :param field_data_last_updated_date: The field_data_last_updated_date of this Room.  # noqa: E501
+        :type: datetime
+        """
+
+        self._field_data_last_updated_date = field_data_last_updated_date
 
     @property
     def field_data(self):

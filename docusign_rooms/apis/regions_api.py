@@ -55,7 +55,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param Region body: 
+        :param Region body: The information required to create a new region for the caller's company
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
@@ -82,7 +82,7 @@ class RegionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param Region body: 
+        :param Region body: The information required to create a new region for the caller's company
         :return: Region
                  If the method is called asynchronously,
                  returns the request thread.
@@ -127,11 +127,11 @@ class RegionsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -241,7 +241,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -355,7 +355,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -469,7 +469,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -588,7 +588,7 @@ class RegionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\

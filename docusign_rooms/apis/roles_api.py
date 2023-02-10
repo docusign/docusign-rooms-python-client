@@ -55,7 +55,7 @@ class RolesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoleForCreate body: 
+        :param RoleForCreate body: Name and permission details of the role to be created
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -82,7 +82,7 @@ class RolesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoleForCreate body: 
+        :param RoleForCreate body: Name and permission details of the role to be created
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -127,11 +127,11 @@ class RolesApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -241,7 +241,7 @@ class RolesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -359,7 +359,7 @@ class RolesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -399,7 +399,7 @@ class RolesApi(object):
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param bool only_assignable: Returns assignable roles based on calling user's company permissions.               DEPRECATED: Please use filterContext parameter to get the assignable roles. AssignableRolesBasedOnCompanyPermissions returns same results as onlyAssignable=true
-        :param str filter_context: Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions
+        :param object filter_context: Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions
         :param str filter: A search filter that returns roles by the beginning of the role name. You can enter the beginning of the role name only to return all of the roles that begin with the text that you entered.
         :param int start_position: The starting zero-based index position of the result set. The default value is 0.
         :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
@@ -430,7 +430,7 @@ class RolesApi(object):
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param bool only_assignable: Returns assignable roles based on calling user's company permissions.               DEPRECATED: Please use filterContext parameter to get the assignable roles. AssignableRolesBasedOnCompanyPermissions returns same results as onlyAssignable=true
-        :param str filter_context: Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions
+        :param object filter_context: Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions
         :param str filter: A search filter that returns roles by the beginning of the role name. You can enter the beginning of the role name only to return all of the roles that begin with the text that you entered.
         :param int start_position: The starting zero-based index position of the result set. The default value is 0.
         :param int count: The number of results to return. This value must be a number between `1` and `100` (default).
@@ -486,7 +486,7 @@ class RolesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -526,7 +526,7 @@ class RolesApi(object):
             for asynchronous request. (optional)
         :param int role_id: The id of the role. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoleForUpdate body: 
+        :param RoleForUpdate body: Name and permission details of the role to be updated
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -554,7 +554,7 @@ class RolesApi(object):
             for asynchronous request. (optional)
         :param int role_id: The id of the role. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoleForUpdate body: 
+        :param RoleForUpdate body: Name and permission details of the role to be updated
         :return: Role
                  If the method is called asynchronously,
                  returns the request thread.
@@ -604,11 +604,11 @@ class RolesApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []

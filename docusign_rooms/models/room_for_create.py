@@ -39,7 +39,8 @@ class RoomForCreate(object):
         'owner_id': 'int',
         'template_id': 'int',
         'office_id': 'int',
-        'field_data': 'FieldDataForCreate'
+        'field_data': 'FieldDataForCreate',
+        'listing_source': 'str'
     }
 
     attribute_map = {
@@ -49,7 +50,8 @@ class RoomForCreate(object):
         'owner_id': 'ownerId',
         'template_id': 'templateId',
         'office_id': 'officeId',
-        'field_data': 'fieldData'
+        'field_data': 'fieldData',
+        'listing_source': 'listingSource'
     }
 
     def __init__(self, _configuration=None, **kwargs):  # noqa: E501
@@ -65,6 +67,7 @@ class RoomForCreate(object):
         self._template_id = None
         self._office_id = None
         self._field_data = None
+        self._listing_source = None
         self.discriminator = None
 
         setattr(self, "_{}".format('name'), kwargs.get('name', None))
@@ -74,6 +77,7 @@ class RoomForCreate(object):
         setattr(self, "_{}".format('template_id'), kwargs.get('template_id', None))
         setattr(self, "_{}".format('office_id'), kwargs.get('office_id', None))
         setattr(self, "_{}".format('field_data'), kwargs.get('field_data', None))
+        setattr(self, "_{}".format('listing_source'), kwargs.get('listing_source', None))
 
     @property
     def name(self):
@@ -227,6 +231,34 @@ class RoomForCreate(object):
         """
 
         self._field_data = field_data
+
+    @property
+    def listing_source(self):
+        """Gets the listing_source of this RoomForCreate.  # noqa: E501
+
+
+        :return: The listing_source of this RoomForCreate.  # noqa: E501
+        :rtype: str
+        """
+        return self._listing_source
+
+    @listing_source.setter
+    def listing_source(self, listing_source):
+        """Sets the listing_source of this RoomForCreate.
+
+
+        :param listing_source: The listing_source of this RoomForCreate.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["PublicRecords", "MLS"]  # noqa: E501
+        if (self._configuration.client_side_validation and
+                listing_source not in allowed_values):
+            raise ValueError(
+                "Invalid value for `listing_source` ({0}), must be one of {1}"  # noqa: E501
+                .format(listing_source, allowed_values)
+            )
+
+        self._listing_source = listing_source
 
     def to_dict(self):
         """Returns the model properties as a dict"""

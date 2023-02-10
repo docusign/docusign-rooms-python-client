@@ -21,10 +21,7 @@ from docusign_rooms.models.account_summary import AccountSummary
 from docusign_rooms.models.activity_type import ActivityType
 from docusign_rooms.models.api_error import ApiError
 from docusign_rooms.models.assignable_roles import AssignableRoles
-from docusign_rooms.models.classic_admin_to_invite import ClassicAdminToInvite
-from docusign_rooms.models.classic_agent_to_invite import ClassicAgentToInvite
 from docusign_rooms.models.classic_manager_permissions import ClassicManagerPermissions
-from docusign_rooms.models.classic_manager_to_invite import ClassicManagerToInvite
 from docusign_rooms.models.closing_status import ClosingStatus
 from docusign_rooms.models.contact_side import ContactSide
 from docusign_rooms.models.country import Country
@@ -39,6 +36,8 @@ from docusign_rooms.models.document_user_for_create import DocumentUserForCreate
 from docusign_rooms.models.e_sign_account_role_settings import ESignAccountRoleSettings
 from docusign_rooms.models.e_sign_permission_profile import ESignPermissionProfile
 from docusign_rooms.models.e_sign_permission_profile_list import ESignPermissionProfileList
+from docusign_rooms.models.envelope import Envelope
+from docusign_rooms.models.envelope_for_create import EnvelopeForCreate
 from docusign_rooms.models.external_form_fill_session import ExternalFormFillSession
 from docusign_rooms.models.external_form_fill_session_for_create import ExternalFormFillSessionForCreate
 from docusign_rooms.models.field import Field
@@ -54,11 +53,15 @@ from docusign_rooms.models.form_for_add import FormForAdd
 from docusign_rooms.models.form_group import FormGroup
 from docusign_rooms.models.form_group_for_create import FormGroupForCreate
 from docusign_rooms.models.form_group_for_update import FormGroupForUpdate
+from docusign_rooms.models.form_group_form import FormGroupForm
+from docusign_rooms.models.form_group_form_list import FormGroupFormList
 from docusign_rooms.models.form_group_form_to_assign import FormGroupFormToAssign
 from docusign_rooms.models.form_group_summary import FormGroupSummary
 from docusign_rooms.models.form_group_summary_list import FormGroupSummaryList
 from docusign_rooms.models.form_library_summary import FormLibrarySummary
 from docusign_rooms.models.form_library_summary_list import FormLibrarySummaryList
+from docusign_rooms.models.form_provider_association_summary import FormProviderAssociationSummary
+from docusign_rooms.models.form_provider_associations_summary_list import FormProviderAssociationsSummaryList
 from docusign_rooms.models.form_summary import FormSummary
 from docusign_rooms.models.form_summary_list import FormSummaryList
 from docusign_rooms.models.global_activity_types import GlobalActivityTypes
@@ -79,6 +82,7 @@ from docusign_rooms.models.global_task_statuses import GlobalTaskStatuses
 from docusign_rooms.models.global_time_zones import GlobalTimeZones
 from docusign_rooms.models.global_transaction_sides import GlobalTransactionSides
 from docusign_rooms.models.group_form import GroupForm
+from docusign_rooms.models.listing_type import ListingType
 from docusign_rooms.models.locked_out_details import LockedOutDetails
 from docusign_rooms.models.member_sorting_option import MemberSortingOption
 from docusign_rooms.models.office import Office

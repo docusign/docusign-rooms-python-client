@@ -56,7 +56,7 @@ class FormGroupsApi(object):
             for asynchronous request. (optional)
         :param str form_group_id: The ID of the form group. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormGroupFormToAssign body: 
+        :param FormGroupFormToAssign body: Assigns the form specified in the `formId` property of the request to the form group `formGroupId`.
         :return: FormGroupFormToAssign
                  If the method is called asynchronously,
                  returns the request thread.
@@ -84,7 +84,7 @@ class FormGroupsApi(object):
             for asynchronous request. (optional)
         :param str form_group_id: The ID of the form group. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormGroupFormToAssign body: 
+        :param FormGroupFormToAssign body: Assigns the form specified in the `formId` property of the request to the form group `formGroupId`.
         :return: FormGroupFormToAssign
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,11 +134,11 @@ class FormGroupsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -173,7 +173,7 @@ class FormGroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormGroupForCreate body: 
+        :param FormGroupForCreate body: Required input of name for the form group
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -200,7 +200,7 @@ class FormGroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormGroupForCreate body: 
+        :param FormGroupForCreate body: Required input of name for the form group
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -245,11 +245,11 @@ class FormGroupsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -359,7 +359,7 @@ class FormGroupsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -473,7 +473,7 @@ class FormGroupsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -588,7 +588,7 @@ class FormGroupsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -709,7 +709,7 @@ class FormGroupsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -830,7 +830,7 @@ class FormGroupsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -870,7 +870,7 @@ class FormGroupsApi(object):
             for asynchronous request. (optional)
         :param str form_group_id: The ID of the form group. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormGroupForUpdate body: 
+        :param FormGroupForUpdate body: Required input of name for the form group
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -898,7 +898,7 @@ class FormGroupsApi(object):
             for asynchronous request. (optional)
         :param str form_group_id: The ID of the form group. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormGroupForUpdate body: 
+        :param FormGroupForUpdate body: Required input of name for the form group
         :return: FormGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -948,11 +948,11 @@ class FormGroupsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -1069,7 +1069,7 @@ class FormGroupsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\

@@ -15,14 +15,17 @@ from .external_form_fill_sessions_api import ExternalFormFillSessionsApi
 from .fields_api import FieldsApi
 from .financing_types_api import FinancingTypesApi
 from .form_details_api import FormDetailsApi
+from .form_group_forms_api import FormGroupFormsApi
 from .form_groups_api import FormGroupsApi
 from .form_libraries_api import FormLibrariesApi
+from .form_provider_associations_api import FormProviderAssociationsApi
 from .offices_api import OfficesApi
 from .origins_of_leads_api import OriginsOfLeadsApi
 from .property_types_api import PropertyTypesApi
 from .regions_api import RegionsApi
 from .roles_api import RolesApi
 from .room_contact_types_api import RoomContactTypesApi
+from .room_envelopes_api import RoomEnvelopesApi
 from .room_folders_api import RoomFoldersApi
 from .room_templates_api import RoomTemplatesApi
 from .rooms_api import RoomsApi

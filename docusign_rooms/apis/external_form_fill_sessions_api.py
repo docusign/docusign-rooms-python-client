@@ -43,7 +43,7 @@ class ExternalFormFillSessionsApi(object):
     def create_external_form_fill_session(self, account_id, **kwargs):
         """
         Creates an external form fill session.
-        Returns a URL for a new external form fill session, based on the `roomId` and `formId` that you specify in the `formFillSessionForCreate` request body.
+        Returns a URL for a new external form fill session, based on the `roomId` and `formId` or `formIds` that you specify in the `formFillSessionForCreate` request body.  User may supply up to 10 `formIds`. Eventually, `formId` will be deprecated.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -55,7 +55,7 @@ class ExternalFormFillSessionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ExternalFormFillSessionForCreate body: 
+        :param ExternalFormFillSessionForCreate body: Request body that accepts the `roomId` and `formId` or `formIds` that you specify in the `formFillSessionForCreate` request body. User may supply up to 10 `formIds`. Eventually, `formId` will be deprecated
         :return: ExternalFormFillSession
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,7 +70,7 @@ class ExternalFormFillSessionsApi(object):
     def create_external_form_fill_session_with_http_info(self, account_id, **kwargs):
         """
         Creates an external form fill session.
-        Returns a URL for a new external form fill session, based on the `roomId` and `formId` that you specify in the `formFillSessionForCreate` request body.
+        Returns a URL for a new external form fill session, based on the `roomId` and `formId` or `formIds` that you specify in the `formFillSessionForCreate` request body.  User may supply up to 10 `formIds`. Eventually, `formId` will be deprecated.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -82,7 +82,7 @@ class ExternalFormFillSessionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param ExternalFormFillSessionForCreate body: 
+        :param ExternalFormFillSessionForCreate body: Request body that accepts the `roomId` and `formId` or `formIds` that you specify in the `formFillSessionForCreate` request body. User may supply up to 10 `formIds`. Eventually, `formId` will be deprecated
         :return: ExternalFormFillSession
                  If the method is called asynchronously,
                  returns the request thread.
@@ -127,11 +127,11 @@ class ExternalFormFillSessionsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []

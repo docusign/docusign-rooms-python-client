@@ -55,7 +55,7 @@ class OfficesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param OfficeForCreate body: 
+        :param OfficeForCreate body: Creates an office with given name and other details like Region,Address
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
@@ -82,7 +82,7 @@ class OfficesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param OfficeForCreate body: 
+        :param OfficeForCreate body: Creates an office with given name and other details like Region,Address
         :return: Office
                  If the method is called asynchronously,
                  returns the request thread.
@@ -127,11 +127,11 @@ class OfficesApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -165,7 +165,7 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int office_id:  (required)
+        :param int office_id: Office ID to be deleted (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
@@ -192,7 +192,7 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int office_id:  (required)
+        :param int office_id: Office ID to be deleted (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: None
                  If the method is called asynchronously,
@@ -241,7 +241,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -355,7 +355,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -478,7 +478,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -516,7 +516,7 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int office_id:  (required)
+        :param int office_id: ID of the office (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: OfficeReferenceCountList
                  If the method is called asynchronously,
@@ -543,7 +543,7 @@ class OfficesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int office_id:  (required)
+        :param int office_id: ID of the office (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :return: OfficeReferenceCountList
                  If the method is called asynchronously,
@@ -592,7 +592,7 @@ class OfficesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\

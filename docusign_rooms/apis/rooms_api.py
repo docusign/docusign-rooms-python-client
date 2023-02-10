@@ -56,7 +56,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param Document body: 
+        :param Document body: Document details to be added
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -84,7 +84,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param Document body: 
+        :param Document body: Document details to be added
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,11 +134,11 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -174,7 +174,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param file file: 
+        :param file file: File to be uploaded
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -202,7 +202,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param file file: 
+        :param file file: File to be uploaded
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -252,7 +252,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -292,7 +292,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: Id of the room to which the DocuSign Form is being added (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormForAdd body: 
+        :param FormForAdd body: Contains information about the form being added
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -320,7 +320,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: Id of the room to which the DocuSign Form is being added (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FormForAdd body: 
+        :param FormForAdd body: Contains information about the form being added
         :return: RoomDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -370,11 +370,11 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -409,7 +409,7 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomForCreate body: 
+        :param RoomForCreate body: The properties of the new room
         :return: Room
                  If the method is called asynchronously,
                  returns the request thread.
@@ -436,7 +436,7 @@ class RoomsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomForCreate body: 
+        :param RoomForCreate body: The properties of the new room
         :return: Room
                  If the method is called asynchronously,
                  returns the request thread.
@@ -481,7 +481,7 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -595,7 +595,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -725,7 +725,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -863,7 +863,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -981,7 +981,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1095,7 +1095,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1209,7 +1209,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1252,7 +1252,7 @@ class RoomsApi(object):
         :param int count: Number of room users to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param str filter: Returns room users filtered by Name and Email.
-        :param str sort: Sorts results. Options are FirstNameAsc, FirstNameDesc, LastNameAsc, LastNameDesc, EmailAsc, EmailDesc. Defaults to LastNameDesc
+        :param object sort: Sorts results. Options are FirstNameAsc, FirstNameDesc, LastNameAsc, LastNameDesc, EmailAsc, EmailDesc. Defaults to LastNameDesc
         :return: RoomUsersResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1283,7 +1283,7 @@ class RoomsApi(object):
         :param int count: Number of room users to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
         :param str filter: Returns room users filtered by Name and Email.
-        :param str sort: Sorts results. Options are FirstNameAsc, FirstNameDesc, LastNameAsc, LastNameDesc, EmailAsc, EmailDesc. Defaults to LastNameDesc
+        :param object sort: Sorts results. Options are FirstNameAsc, FirstNameDesc, LastNameAsc, LastNameDesc, EmailAsc, EmailDesc. Defaults to LastNameDesc
         :return: RoomUsersResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1339,7 +1339,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1380,7 +1380,7 @@ class RoomsApi(object):
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of rooms to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
-        :param str room_status: Status of the rooms to return. Defaults to \"Active\".
+        :param object room_status: Status of the rooms to return. Defaults to \"Active\".
         :param int office_id: Only return rooms in this office.
         :param str field_data_changed_start_date: Fields data changed start datetime in UTC. Valid formats: yyyy-mm-dd hh:mm:ss or yyyy/mm/dd hh:mm:ss -Time is optional and will default to 00:00:00.
         :param str field_data_changed_end_date: Fields-data changed end DateTime in UTC. Valid formats: yyyy-mm-dd hh:mm:ss or yyyy/mm/dd hh:mm:ss -Time is optional and will default to 00:00:00.
@@ -1414,7 +1414,7 @@ class RoomsApi(object):
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
         :param int count: Number of rooms to return. Defaults to the maximum which is 100.
         :param int start_position: Position of the first item in the total results. Defaults to 0.
-        :param str room_status: Status of the rooms to return. Defaults to \"Active\".
+        :param object room_status: Status of the rooms to return. Defaults to \"Active\".
         :param int office_id: Only return rooms in this office.
         :param str field_data_changed_start_date: Fields data changed start datetime in UTC. Valid formats: yyyy-mm-dd hh:mm:ss or yyyy/mm/dd hh:mm:ss -Time is optional and will default to 00:00:00.
         :param str field_data_changed_end_date: Fields-data changed end DateTime in UTC. Valid formats: yyyy-mm-dd hh:mm:ss or yyyy/mm/dd hh:mm:ss -Time is optional and will default to 00:00:00.
@@ -1478,7 +1478,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1518,7 +1518,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomInvite body: 
+        :param RoomInvite body: Name, Email, Side, Role of the user being invited
         :return: RoomInviteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1546,7 +1546,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomInvite body: 
+        :param RoomInvite body: Name, Email, Side, Role of the user being invited
         :return: RoomInviteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1596,11 +1596,11 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -1637,7 +1637,7 @@ class RoomsApi(object):
         :param int room_id: The id of the room. (required)
         :param int user_id: The id of the user to update. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomUserForUpdate body: 
+        :param RoomUserForUpdate body: Updated Role and Side of the given user
         :return: RoomUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1666,7 +1666,7 @@ class RoomsApi(object):
         :param int room_id: The id of the room. (required)
         :param int user_id: The id of the user to update. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomUserForUpdate body: 
+        :param RoomUserForUpdate body: Updated Role and Side of the given user
         :return: RoomUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1721,11 +1721,11 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -1842,7 +1842,7 @@ class RoomsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -1883,7 +1883,7 @@ class RoomsApi(object):
         :param int room_id: The room Id to revoke access from (required)
         :param int user_id: The user Id getting revoked from the room (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomUserRemovalDetail body: 
+        :param RoomUserRemovalDetail body: Contains the date on which the users room access should be revoked
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1912,7 +1912,7 @@ class RoomsApi(object):
         :param int room_id: The room Id to revoke access from (required)
         :param int user_id: The user Id getting revoked from the room (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param RoomUserRemovalDetail body: 
+        :param RoomUserRemovalDetail body: Contains the date on which the users room access should be revoked
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1967,11 +1967,11 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -2007,7 +2007,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: ID of the room the picture is for. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param file file: 
+        :param file file: File to be uploaded
         :return: RoomPicture
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2035,7 +2035,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: ID of the room the picture is for. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param file file: 
+        :param file file: File to be uploaded
         :return: RoomPicture
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2125,7 +2125,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FieldDataForUpdate body: 
+        :param FieldDataForUpdate body: Dictionary of data to be updated
         :return: FieldData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2153,7 +2153,7 @@ class RoomsApi(object):
             for asynchronous request. (optional)
         :param int room_id: The id of the room. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param FieldDataForUpdate body: 
+        :param FieldDataForUpdate body: Dictionary of data to be updated
         :return: FieldData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2203,7 +2203,7 @@ class RoomsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\

@@ -56,7 +56,7 @@ class DocumentsApi(object):
             for asynchronous request. (optional)
         :param int document_id: The id of the document. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DocumentUserForCreate body: 
+        :param DocumentUserForCreate body: Request body with user id that the document has to be granted to
         :return: DocumentUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -84,7 +84,7 @@ class DocumentsApi(object):
             for asynchronous request. (optional)
         :param int document_id: The id of the document. (required)
         :param str account_id: (Required) The globally unique identifier (GUID) for the account. (required)
-        :param DocumentUserForCreate body: 
+        :param DocumentUserForCreate body: Request body with user id that the document has to be granted to
         :return: DocumentUser
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,11 +134,11 @@ class DocumentsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])
+            select_header_content_type(['application/json-patch+json', 'application/json', 'text/json', 'application/*+json', 'application/xml', 'text/xml', 'application/*+xml'])
 
         # Authentication setting
         auth_settings = []
@@ -248,7 +248,7 @@ class DocumentsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
@@ -366,7 +366,7 @@ class DocumentsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['text/plain', 'application/json', 'text/json'])
+            select_header_accept(['text/plain', 'application/json', 'text/json', 'application/xml', 'text/xml'])
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\

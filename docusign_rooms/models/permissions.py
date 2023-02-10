@@ -51,6 +51,7 @@ class Permissions(object):
         'can_manage_room_owners': 'bool',
         'can_delete_rooms': 'bool',
         'can_connect_to_mortgage_cadence': 'bool',
+        'auto_access_to_rooms_in_office_only': 'bool',
         'can_view_room_details': 'bool',
         'can_view_and_edit_room_details': 'bool',
         'can_send_room_details_to_lone_wolf': 'bool',
@@ -60,10 +61,13 @@ class Permissions(object):
         'documents_viewable_by_others_in_room_from_office': 'bool',
         'documents_auto_owned_by_peers': 'bool',
         'can_delete_owned_documents': 'bool',
+        'can_delete_signed_documents': 'bool',
+        'can_delete_unsigned_documents': 'bool',
         'can_manage_shared_docs': 'bool',
         'can_manage_form_groups': 'bool',
         'can_share_docs_not_owned': 'bool',
         'can_create_form_templates': 'bool',
+        'can_manage_form_packets': 'bool',
         'can_add_tasks_to_any_task_lists': 'bool',
         'can_edit_editable_tasks': 'bool',
         'can_edit_any_tasks': 'bool',
@@ -93,7 +97,8 @@ class Permissions(object):
         'can_manage_roles_and_permissions': 'bool',
         'can_manage_room_details': 'bool',
         'can_manage_room_templates': 'bool',
-        'can_manage_integration_settings': 'bool'
+        'can_manage_integration_settings': 'bool',
+        'can_export_company_usage_report': 'bool'
     }
 
     attribute_map = {
@@ -115,6 +120,7 @@ class Permissions(object):
         'can_manage_room_owners': 'canManageRoomOwners',
         'can_delete_rooms': 'canDeleteRooms',
         'can_connect_to_mortgage_cadence': 'canConnectToMortgageCadence',
+        'auto_access_to_rooms_in_office_only': 'autoAccessToRoomsInOfficeOnly',
         'can_view_room_details': 'canViewRoomDetails',
         'can_view_and_edit_room_details': 'canViewAndEditRoomDetails',
         'can_send_room_details_to_lone_wolf': 'canSendRoomDetailsToLoneWolf',
@@ -124,10 +130,13 @@ class Permissions(object):
         'documents_viewable_by_others_in_room_from_office': 'documentsViewableByOthersInRoomFromOffice',
         'documents_auto_owned_by_peers': 'documentsAutoOwnedByPeers',
         'can_delete_owned_documents': 'canDeleteOwnedDocuments',
+        'can_delete_signed_documents': 'canDeleteSignedDocuments',
+        'can_delete_unsigned_documents': 'canDeleteUnsignedDocuments',
         'can_manage_shared_docs': 'canManageSharedDocs',
         'can_manage_form_groups': 'canManageFormGroups',
         'can_share_docs_not_owned': 'canShareDocsNotOwned',
         'can_create_form_templates': 'canCreateFormTemplates',
+        'can_manage_form_packets': 'canManageFormPackets',
         'can_add_tasks_to_any_task_lists': 'canAddTasksToAnyTaskLists',
         'can_edit_editable_tasks': 'canEditEditableTasks',
         'can_edit_any_tasks': 'canEditAnyTasks',
@@ -157,7 +166,8 @@ class Permissions(object):
         'can_manage_roles_and_permissions': 'canManageRolesAndPermissions',
         'can_manage_room_details': 'canManageRoomDetails',
         'can_manage_room_templates': 'canManageRoomTemplates',
-        'can_manage_integration_settings': 'canManageIntegrationSettings'
+        'can_manage_integration_settings': 'canManageIntegrationSettings',
+        'can_export_company_usage_report': 'canExportCompanyUsageReport'
     }
 
     def __init__(self, _configuration=None, **kwargs):  # noqa: E501
@@ -184,6 +194,7 @@ class Permissions(object):
         self._can_manage_room_owners = None
         self._can_delete_rooms = None
         self._can_connect_to_mortgage_cadence = None
+        self._auto_access_to_rooms_in_office_only = None
         self._can_view_room_details = None
         self._can_view_and_edit_room_details = None
         self._can_send_room_details_to_lone_wolf = None
@@ -193,10 +204,13 @@ class Permissions(object):
         self._documents_viewable_by_others_in_room_from_office = None
         self._documents_auto_owned_by_peers = None
         self._can_delete_owned_documents = None
+        self._can_delete_signed_documents = None
+        self._can_delete_unsigned_documents = None
         self._can_manage_shared_docs = None
         self._can_manage_form_groups = None
         self._can_share_docs_not_owned = None
         self._can_create_form_templates = None
+        self._can_manage_form_packets = None
         self._can_add_tasks_to_any_task_lists = None
         self._can_edit_editable_tasks = None
         self._can_edit_any_tasks = None
@@ -227,6 +241,7 @@ class Permissions(object):
         self._can_manage_room_details = None
         self._can_manage_room_templates = None
         self._can_manage_integration_settings = None
+        self._can_export_company_usage_report = None
         self.discriminator = None
 
         setattr(self, "_{}".format('can_add_users_to_rooms'), kwargs.get('can_add_users_to_rooms', None))
@@ -247,6 +262,7 @@ class Permissions(object):
         setattr(self, "_{}".format('can_manage_room_owners'), kwargs.get('can_manage_room_owners', None))
         setattr(self, "_{}".format('can_delete_rooms'), kwargs.get('can_delete_rooms', None))
         setattr(self, "_{}".format('can_connect_to_mortgage_cadence'), kwargs.get('can_connect_to_mortgage_cadence', None))
+        setattr(self, "_{}".format('auto_access_to_rooms_in_office_only'), kwargs.get('auto_access_to_rooms_in_office_only', None))
         setattr(self, "_{}".format('can_view_room_details'), kwargs.get('can_view_room_details', None))
         setattr(self, "_{}".format('can_view_and_edit_room_details'), kwargs.get('can_view_and_edit_room_details', None))
         setattr(self, "_{}".format('can_send_room_details_to_lone_wolf'), kwargs.get('can_send_room_details_to_lone_wolf', None))
@@ -256,10 +272,13 @@ class Permissions(object):
         setattr(self, "_{}".format('documents_viewable_by_others_in_room_from_office'), kwargs.get('documents_viewable_by_others_in_room_from_office', None))
         setattr(self, "_{}".format('documents_auto_owned_by_peers'), kwargs.get('documents_auto_owned_by_peers', None))
         setattr(self, "_{}".format('can_delete_owned_documents'), kwargs.get('can_delete_owned_documents', None))
+        setattr(self, "_{}".format('can_delete_signed_documents'), kwargs.get('can_delete_signed_documents', None))
+        setattr(self, "_{}".format('can_delete_unsigned_documents'), kwargs.get('can_delete_unsigned_documents', None))
         setattr(self, "_{}".format('can_manage_shared_docs'), kwargs.get('can_manage_shared_docs', None))
         setattr(self, "_{}".format('can_manage_form_groups'), kwargs.get('can_manage_form_groups', None))
         setattr(self, "_{}".format('can_share_docs_not_owned'), kwargs.get('can_share_docs_not_owned', None))
         setattr(self, "_{}".format('can_create_form_templates'), kwargs.get('can_create_form_templates', None))
+        setattr(self, "_{}".format('can_manage_form_packets'), kwargs.get('can_manage_form_packets', None))
         setattr(self, "_{}".format('can_add_tasks_to_any_task_lists'), kwargs.get('can_add_tasks_to_any_task_lists', None))
         setattr(self, "_{}".format('can_edit_editable_tasks'), kwargs.get('can_edit_editable_tasks', None))
         setattr(self, "_{}".format('can_edit_any_tasks'), kwargs.get('can_edit_any_tasks', None))
@@ -290,6 +309,7 @@ class Permissions(object):
         setattr(self, "_{}".format('can_manage_room_details'), kwargs.get('can_manage_room_details', None))
         setattr(self, "_{}".format('can_manage_room_templates'), kwargs.get('can_manage_room_templates', None))
         setattr(self, "_{}".format('can_manage_integration_settings'), kwargs.get('can_manage_integration_settings', None))
+        setattr(self, "_{}".format('can_export_company_usage_report'), kwargs.get('can_export_company_usage_report', None))
 
     @property
     def can_add_users_to_rooms(self):
@@ -670,6 +690,27 @@ class Permissions(object):
         self._can_connect_to_mortgage_cadence = can_connect_to_mortgage_cadence
 
     @property
+    def auto_access_to_rooms_in_office_only(self):
+        """Gets the auto_access_to_rooms_in_office_only of this Permissions.  # noqa: E501
+
+
+        :return: The auto_access_to_rooms_in_office_only of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_access_to_rooms_in_office_only
+
+    @auto_access_to_rooms_in_office_only.setter
+    def auto_access_to_rooms_in_office_only(self, auto_access_to_rooms_in_office_only):
+        """Sets the auto_access_to_rooms_in_office_only of this Permissions.
+
+
+        :param auto_access_to_rooms_in_office_only: The auto_access_to_rooms_in_office_only of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_access_to_rooms_in_office_only = auto_access_to_rooms_in_office_only
+
+    @property
     def can_view_room_details(self):
         """Gets the can_view_room_details of this Permissions.  # noqa: E501
 
@@ -859,6 +900,48 @@ class Permissions(object):
         self._can_delete_owned_documents = can_delete_owned_documents
 
     @property
+    def can_delete_signed_documents(self):
+        """Gets the can_delete_signed_documents of this Permissions.  # noqa: E501
+
+
+        :return: The can_delete_signed_documents of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_delete_signed_documents
+
+    @can_delete_signed_documents.setter
+    def can_delete_signed_documents(self, can_delete_signed_documents):
+        """Sets the can_delete_signed_documents of this Permissions.
+
+
+        :param can_delete_signed_documents: The can_delete_signed_documents of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_delete_signed_documents = can_delete_signed_documents
+
+    @property
+    def can_delete_unsigned_documents(self):
+        """Gets the can_delete_unsigned_documents of this Permissions.  # noqa: E501
+
+
+        :return: The can_delete_unsigned_documents of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_delete_unsigned_documents
+
+    @can_delete_unsigned_documents.setter
+    def can_delete_unsigned_documents(self, can_delete_unsigned_documents):
+        """Sets the can_delete_unsigned_documents of this Permissions.
+
+
+        :param can_delete_unsigned_documents: The can_delete_unsigned_documents of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_delete_unsigned_documents = can_delete_unsigned_documents
+
+    @property
     def can_manage_shared_docs(self):
         """Gets the can_manage_shared_docs of this Permissions.  # noqa: E501
 
@@ -941,6 +1024,27 @@ class Permissions(object):
         """
 
         self._can_create_form_templates = can_create_form_templates
+
+    @property
+    def can_manage_form_packets(self):
+        """Gets the can_manage_form_packets of this Permissions.  # noqa: E501
+
+
+        :return: The can_manage_form_packets of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_manage_form_packets
+
+    @can_manage_form_packets.setter
+    def can_manage_form_packets(self, can_manage_form_packets):
+        """Sets the can_manage_form_packets of this Permissions.
+
+
+        :param can_manage_form_packets: The can_manage_form_packets of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_manage_form_packets = can_manage_form_packets
 
     @property
     def can_add_tasks_to_any_task_lists(self):
@@ -1571,6 +1675,27 @@ class Permissions(object):
         """
 
         self._can_manage_integration_settings = can_manage_integration_settings
+
+    @property
+    def can_export_company_usage_report(self):
+        """Gets the can_export_company_usage_report of this Permissions.  # noqa: E501
+
+
+        :return: The can_export_company_usage_report of this Permissions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_export_company_usage_report
+
+    @can_export_company_usage_report.setter
+    def can_export_company_usage_report(self, can_export_company_usage_report):
+        """Sets the can_export_company_usage_report of this Permissions.
+
+
+        :param can_export_company_usage_report: The can_export_company_usage_report of this Permissions.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_export_company_usage_report = can_export_company_usage_report
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,7 +35,7 @@ class AccountSummary(object):
     swagger_types = {
         'company_id': 'int',
         'name': 'str',
-        'company_version': 'ProductVersion',
+        'company_version': 'str',
         'docu_sign_account_guid': 'str',
         'default_field_set_id': 'str',
         'require_office_library_assignments': 'bool'
@@ -119,7 +119,7 @@ class AccountSummary(object):
 
 
         :return: The company_version of this AccountSummary.  # noqa: E501
-        :rtype: ProductVersion
+        :rtype: str
         """
         return self._company_version
 
@@ -129,8 +129,15 @@ class AccountSummary(object):
 
 
         :param company_version: The company_version of this AccountSummary.  # noqa: E501
-        :type: ProductVersion
+        :type: str
         """
+        allowed_values = ["v5", "v6"]  # noqa: E501
+        if (self._configuration.client_side_validation and
+                company_version not in allowed_values):
+            raise ValueError(
+                "Invalid value for `company_version` ({0}), must be one of {1}"  # noqa: E501
+                .format(company_version, allowed_values)
+            )
 
         self._company_version = company_version
 
